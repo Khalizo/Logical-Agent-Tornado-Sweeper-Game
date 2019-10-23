@@ -14,6 +14,8 @@ public class AgentRPX {
     protected int maxY; //Max Y coordinate of the map
     public ArrayList<int[]> unknown = new ArrayList<int[]>(); //Unknown hexagons
     final char SIGN_UNKNOWN = '?'; //sign for unknown
+    public boolean isSafe = true;
+    protected Board agentboard = new Board(this.getCoveredMap());
 
 
 
@@ -35,14 +37,17 @@ public class AgentRPX {
         for (int i = 0; i < maxX; i++) {
             for (int j = 0; j < maxY; j++) {
                 coveredMap[i][j] = SIGN_UNKNOWN;
+                unknown.add(new int[]{i, j});
             }
+
         }
 
         //two starting clues of probing in the top left hand corner and the centre
         double mid = (map.length/2);
         int m = (int)mid;
-        coveredMap[0][0] = map[0][0];
-        coveredMap[m][m] = map[m][m];
+//        coveredMap[0][0] = map[0][0];
+//        coveredMap[m][m] = map[m][m];
+
 
     }
 
@@ -52,18 +57,23 @@ public class AgentRPX {
      * @param y
      */
     public void probe(int x , int y) {
+        if (answerMap[y][x] == 't') {
+            isSafe = false;
+            coveredMap[y][x] =  answerMap[y][x];
+        }
+        else {
+            coveredMap[y][x] =  answerMap[y][x];
+        }
+
+        for (int i = 0; i < unknown.size(); i++) {
+            if (unknown.get(i)[1] == y && unknown.get(i)[0] == x) {
+                unknown.remove(i);
+                break;
+            }
+        }
+
 
     }
-
-    public void uncoverCell () {
-        Random rand = new Random();
-        int randX = rand.nextInt(answerMap.length -1);
-        int randY = rand.nextInt(answerMap.length -1);
-        coveredMap[randY][randX] = answerMap[randY][randX];
-        System.out.println("The agent just uncovered cell: " + "[" + randY + "," + randX + "]" );
-    }
-
-
 
     /**
      * show the current state of the map
@@ -77,11 +87,20 @@ public class AgentRPX {
      * make a random probe for all the covered cells
      */
     public void rpx () {
-
-        for (int i = 0; i <25; i++) {
-            this.uncoverCell();
+        ArrayList<int[]> front = this.unknown;
+        Random rand = new Random();
+        int index = rand.nextInt(front.size());
+        int loc[] = front.get(index);
+        probe(loc[1], loc[0]);
+        rpxCount++;
+        System.out.println("RPX: probe[" +loc[1] + "," + loc[0] + "]");
+        Board agentBoard = new Board(this.getCoveredMap());
+        agentBoard.printBoard();
+        if (!this.isSafe) {
+            System.out.println("A Tornado is in cell [" + loc[1] + "," + loc[0] + "]! Sorry you Lose :(");
         }
-        
+
+
     }
 
     /**
