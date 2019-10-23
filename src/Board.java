@@ -1,16 +1,16 @@
-/*
+/**
  * CS5011 A2 Starter code
  * This class holds the board to be played
  * An example on how to print the board is given
  *
- * author Alice Toniolo
+ * @author Alice Toniolo
  *
  * From another class you can access, set and print a world map as
  * World world = World.valueOf("TEST0");
  * Board board = new Board(world.map);
  * board.printBoard();
  *
- */
+ **/
 
 public class Board {
 

@@ -1,8 +1,8 @@
-/*
+/**
  * CS5011 A2 Starter code
  * This enum class holds the various boards to be played
  *
- * author Alice Toniolo
+ * @author Alice Toniolo
  *
  *
  * TEST: 3 boards
@@ -13,7 +13,7 @@
  * Two hints are given at indexes [0][0] and [length/2][length/2]
  *
  *
- */
+ **/
 
 public enum World {
 
