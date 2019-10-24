@@ -12,8 +12,10 @@ public class AgentRPX {
     protected char [][] answerMap; //Original map
     protected int maxX; //Max X coordinate of the map
     protected int maxY; //Max Y coordinate of the map
+    protected int tornadoesToMark = 0;
     public ArrayList<int[]> unknown = new ArrayList<int[]>(); //Unknown hexagons
     final char SIGN_UNKNOWN = '?'; //sign for unknown
+    final char SIGN_MARK = 'D'; //sign for unknown
     public boolean isSafe = true;
     protected Board agentboard = new Board(this.getCoveredMap());
 
@@ -37,16 +39,13 @@ public class AgentRPX {
         for (int i = 0; i < maxX; i++) {
             for (int j = 0; j < maxY; j++) {
                 coveredMap[i][j] = SIGN_UNKNOWN;
+                if (map[i][j] == 't'){
+                    tornadoesToMark++;
+                }
                 unknown.add(new int[]{i, j});
             }
 
         }
-
-        //two starting clues of probing in the top left hand corner and the centre
-        double mid = (map.length/2);
-        int m = (int)mid;
-//        coveredMap[0][0] = map[0][0];
-//        coveredMap[m][m] = map[m][m];
 
 
     }
@@ -66,11 +65,53 @@ public class AgentRPX {
         }
 
         for (int i = 0; i < unknown.size(); i++) {
-            if (unknown.get(i)[1] == y && unknown.get(i)[0] == x) {
+            if (unknown.get(i)[0] == y && unknown.get(i)[1] == x) {
                 unknown.remove(i);
                 break;
             }
         }
+
+        if (answerMap[y][x] == '0') {
+            uncoverZeroNeighbours(x, y);
+        }
+
+
+    }
+
+    /**
+     * probe the adjacent cells of 0
+     * @param x
+     * @param y
+     */
+
+
+    public void uncoverZeroNeighbours (int x, int y  ) {
+
+        if (x - 1 >= 0  && y -1 >= 0  && coveredMap[y-1][x-1] == SIGN_UNKNOWN){
+            probe(x -1, y-1);
+        }
+
+        if (x - 1 >= 0 && coveredMap[y][x-1] == SIGN_UNKNOWN){
+            probe(x-1, y);
+        }
+
+        if (y + 1 < maxY && coveredMap[y+1][x] == SIGN_UNKNOWN){
+            probe(x, y +1 );
+        }
+
+        if (x + 1 < maxX && y + 1< maxY && coveredMap[y+1][x +1] == SIGN_UNKNOWN){
+            probe(x + 1, y +1 );
+        }
+
+        if (x + 1 < maxX  && coveredMap[y][x +1] == SIGN_UNKNOWN){
+            probe(x + 1, y);
+        }
+
+        if (y - 1  >=0 && coveredMap[y - 1][x] == SIGN_UNKNOWN){
+            probe(x, y -1);
+        }
+
+
 
 
     }
@@ -110,6 +151,169 @@ public class AgentRPX {
     public char[][] getCoveredMap (){
         return this.coveredMap;
     }
+
+    /**
+     * mark a cell at (x,y)
+     * @param x
+     * @param y
+     */
+    public void mark(int x, int y) {
+        coveredMap[x][y] = SIGN_MARK;
+        tornadoesToMark--;
+        for (int i = 0; i < unknown.size(); i++) {
+            if (unknown.get(i)[0] == x && unknown.get(i)[1] == y) {
+                unknown.remove(i);
+                break;
+            }
+        }
+    }
+
+
+//    /**
+//     * single point strategy is implemented
+//     * @return
+//     */
+//    public boolean sps() {
+//        updateFrontUnknown();
+//        boolean successful = false;
+//        for (int i = 0; i < frontUnknown.size(); i++) {
+//            int x = frontUnknown.get(i)[0];
+//            int y = frontUnknown.get(i)[1];
+//            ArrayList<int[]> knownNeighbors = findAdjacentSafe(frontUnknown.get(i));
+//            for (int[] j: knownNeighbors) {
+//                //all clear neighbours
+//                if (answerMap[j[0]][j[1]] == findAdjacentMark(j).size()) {
+//                    probe(x, y);
+//                    successful = true;
+//                    System.out.println("SPS: probe[" + x + "," + y + "]");
+//                    spsCount++;
+//                    showMap();
+//                    i--;
+//                    updateFrontUnknown();
+//                    break;
+//                }
+//                else {
+//                    //all marked neighbours
+//                    if (answerMap[j[0]][j[1]] == findAdjacentRisk(j).size()) {
+//                        mark(x, y);
+//                        successful = true;
+//                        System.out.println("SPS: probe[" + x + "," + y + "]");
+//                        spsCount++;
+//                        showMap();
+//                        i--;
+//                        updateFrontUnknown();
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//        return successful;
+//    }
+//
+//    /**
+//     * get a array list containing locations of adjacent safe cells
+//     * @param pair
+//     * @return
+//     */
+//    protected ArrayList<int[]> findAdjacentSafe(int[] pair) {
+//        int x = pair[0];
+//        int y = pair[1];
+//        ArrayList<int[]> neighbors  = new ArrayList<int[]>();
+//        for (int i = x - 1; i <= x + 1; i++) {
+//            for (int j = y - 1; j <= y + 1; j++) {
+//                if (i >= 0 && i < maxX && j >= 0 && j < maxY && coveredMap[i][j] != SIGN_UNKNOWN && coveredMap[i][j] != SIGN_MARK) {
+//                    neighbors.add(new int[]{i, j});
+//                }
+//            }
+//        }
+//        return neighbors;
+//    }
+//
+//    /**
+//     * get a array list containing locations of adjacent marked cells
+//     * @param pair
+//     * @return
+//     */
+//    protected ArrayList<int[]> findAdjacentMark(int[] pair) {
+//        int x = pair[0];
+//        int y = pair[1];
+//        ArrayList<int[]> neighbors  = new ArrayList<int[]>();
+//        for (int i = x - 1; i <= x + 1; i++) {
+//            for (int j = y - 1; j <= y + 1; j++) {
+//                if (i >= 0 && i < maxX && j >= 0 && j < maxY && coveredMap[i][j] == SIGN_MARK) {
+//                    neighbors.add(new int[]{i, j});
+//                }
+//            }
+//        }
+//        return neighbors;
+//    }
+//
+//    /**
+//     * get a array list containing locations of adjacent covered cells
+//     * @param pair
+//     * @return
+//     */
+//    protected ArrayList<int[]> findAdjacentUnknown(int[] pair) {
+//        int x = pair[0];
+//        int y = pair[1];
+//        ArrayList<int[]> neighbors  = new ArrayList<int[]>();
+//        for (int i = x - 1; i <= x + 1; i++) {
+//            for (int j = y - 1; j <= y + 1; j++) {
+//                if (i >= 0 && i < maxX && j >= 0 && j < maxY && coveredMap[i][j] == SIGN_UNKNOWN) {
+//                    neighbors.add(new int[]{i, j});
+//                }
+//            }
+//        }
+//        return neighbors;
+//    }
+//
+//    /**
+//     * get a array list containing locations of adjacent covered cells and marked cells
+//     * @param pair
+//     * @return
+//     */
+//    protected ArrayList<int[]> findAdjacentRisk(int[] pair) {
+//        int x = pair[0];
+//        int y = pair[1];
+//        ArrayList<int[]> neighbors  = new ArrayList<int[]>();
+//        for (int i = x - 1; i <= x + 1; i++) {
+//            for (int j = y - 1; j <= y + 1; j++) {
+//                if (i >= 0 && i < maxX && j >= 0 && j < maxY ) {
+//                    if (coveredMap[i][j] == SIGN_UNKNOWN || coveredMap[i][j] == SIGN_MARK) {
+//                        neighbors.add(new int[]{i, j});
+//                    }
+//                }
+//            }
+//        }
+//        return neighbors;
+//    }
+//
+//    /**
+//     * update the covered front array list.
+//     */
+//    public void updateFrontUnknown() {
+//        frontUnknown = new ArrayList<int[]>();
+//        for (int i = 0; i < unknown.size(); i++) {
+//            int[] pair = unknown.get(i).clone();
+//            if (findAdjacentSafe(pair).size() != 0) {
+//                frontUnknown.add(pair);
+//            }
+//        }
+//    }
+//
+//    /**
+//     * update the safe front array list.
+//     */
+//    public void updateFrontKnown() {
+//        frontKnown = new ArrayList<int[]>();
+//        for (int i = 0; i < maxX; i++) {
+//            for (int j = 0; j < maxY; j++) {
+//                if (coveredMap[i][j] != SIGN_UNKNOWN && coveredMap[i][j] != SIGN_MARK && findAdjacentUnknown(new int[]{i, j}).size() > 0) {
+//                    frontKnown.add(new int[]{i,j});
+//                }
+//            }
+//        }
+//    }
 
 
 }
