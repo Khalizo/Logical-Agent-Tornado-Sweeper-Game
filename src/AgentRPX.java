@@ -19,8 +19,6 @@ public class AgentRPX {
     public boolean isSafe = true;
     protected Board agentboard = new Board(this.getCoveredMap());
 
-
-
     //the frontiers of uncovered cells
     public ArrayList<char[]> frontKnown = new ArrayList<char[]>();
     //the frontiers of covered cells
@@ -87,6 +85,8 @@ public class AgentRPX {
 
     public void uncoverZeroNeighbours (int x, int y  ) {
 
+
+        //operations for finding the six neighbours
         if (x - 1 >= 0  && y -1 >= 0  && coveredMap[y-1][x-1] == SIGN_UNKNOWN){
             probe(x -1, y-1);
         }
@@ -110,9 +110,6 @@ public class AgentRPX {
         if (y - 1  >=0 && coveredMap[y - 1][x] == SIGN_UNKNOWN){
             probe(x, y -1);
         }
-
-
-
 
     }
 
@@ -169,6 +166,29 @@ public class AgentRPX {
     }
 
 
+
+
+}
+
+//import java.util.ArrayList;
+//
+///**
+// * The agent class for implementing SPX
+// * @author 180026646
+// */
+//public class SPX extends  AgentRPX {
+//
+//    protected int spxCount = 0;
+//
+//    /**
+//     * Constructor of the aget
+//     * @param map
+//     */
+//
+//    public SPX (char [][] map) {
+//        super (map);
+//    }
+//
 //    /**
 //     * single point strategy is implemented
 //     * @return
@@ -185,8 +205,8 @@ public class AgentRPX {
 //                if (answerMap[j[0]][j[1]] == findAdjacentMark(j).size()) {
 //                    probe(x, y);
 //                    successful = true;
-//                    System.out.println("SPS: probe[" + x + "," + y + "]");
-//                    spsCount++;
+//                    System.out.println("spx: probe[" + x + "," + y + "]");
+//                    spxCount++;
 //                    showMap();
 //                    i--;
 //                    updateFrontUnknown();
@@ -197,8 +217,8 @@ public class AgentRPX {
 //                    if (answerMap[j[0]][j[1]] == findAdjacentRisk(j).size()) {
 //                        mark(x, y);
 //                        successful = true;
-//                        System.out.println("SPS: probe[" + x + "," + y + "]");
-//                        spsCount++;
+//                        System.out.println("spx: probe[" + x + "," + y + "]");
+//                        spxCount++;
 //                        showMap();
 //                        i--;
 //                        updateFrontUnknown();
@@ -314,6 +334,6 @@ public class AgentRPX {
 //            }
 //        }
 //    }
-
-
-}
+//
+//
+//}

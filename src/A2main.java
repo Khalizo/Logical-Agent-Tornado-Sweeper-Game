@@ -31,7 +31,7 @@ public class A2main {
                     //two starting clues of probing in the top left hand corner and the centre
                     double mid = (world.map.length/2);
                     int m = (int)mid;
-                    System.out.println("Agent will be playing a with a " + world.map.length + "x" +world.map.length + " board:");
+                    System.out.println("Agent will be playing with a " + world.map.length + "x" +world.map.length + " board:");
                     System.out.println("BEWARE - this map has " + agent.tornadoesToMark + " tornadoes!");
                     agentBoard.printBoard();
                     System.out.println("***************Game Started***************");
