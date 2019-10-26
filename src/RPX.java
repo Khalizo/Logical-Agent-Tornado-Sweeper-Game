@@ -1,18 +1,18 @@
-import java.util.ArrayList;
 
 /**
  * The agent class for implementing RPX
  * @author 180026646
  */
 
-public class SPX extends Agent {
+public class RPX extends  Agent {
 
     /**
      * Constructor for the map
      * @param map
      */
-    public SPX (char [][] map) {
+    public RPX (char [][] map) {
         super(map);
     }
+
 
 }
