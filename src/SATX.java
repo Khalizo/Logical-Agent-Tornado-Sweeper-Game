@@ -1,19 +1,20 @@
-
 /**
  * The agent class for implementing RPX
  * @author 180026646
  */
 
-public class RPX extends  Agent {
+public class SATX extends Agent {
 
     /**
      * Constructor for the map
      * @param map
      */
-    public RPX (char [][] map) {
+    public SATX (char [][] map) {
         super(map);
     }
 
-
+    public boolean satx () {
+        return true;
+    }
 
 }

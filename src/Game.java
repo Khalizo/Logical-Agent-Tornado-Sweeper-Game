@@ -2,13 +2,6 @@ import sun.management.Agent;
 
 public class Game {
 
-
-//the actual view of the Tornado Sweeper world
-//is able to tell the agent about perceptions
-//Determine if the game is over (won/lost)
-//Should be considered as independent from the player (eg agent)
-
-
     private String map;
 
     public Game  (String map) {
@@ -105,7 +98,7 @@ public class Game {
         double CR= (1 - agent.unknown.size()/cellNumber) *100;
         int completionRate = (int)CR;
 
-        if (!agent.isSafe) {
+        if (!agent.isSafe) { //Checks if the agent has probed a tornado or not
 
             System.out.println();
             System.out.println("***************Performance Report***************");
@@ -124,6 +117,10 @@ public class Game {
             System.out.println("Completion Rate: " + completionRate + "%");
 
         }
+
+    }
+
+    public void playSATX () {
 
     }
 
