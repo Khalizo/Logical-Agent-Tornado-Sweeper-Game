@@ -70,6 +70,8 @@ public class Game {
         SPX agent = new SPX(world.map);
         long start = System.currentTimeMillis();
         Board agentBoard= new Board(agent.getCoveredMap());
+        Board answerBoard = new Board(agent.answerMap);
+        answerBoard.printBoard();
 
         //two starting clues of probing in the top left hand corner and the centre
         double mid = (world.map.length/2);
@@ -88,10 +90,12 @@ public class Game {
         //loop until all cells are marked or probed
         while(!agent.unknown.isEmpty()) {
 
+
             // if SPS doesn't work resort to RPX
             if (!agent.spx()) {
                 agent.rpx();
             }
+
             if (!agent.isSafe) {
                 break;
             }
@@ -102,6 +106,7 @@ public class Game {
             System.out.println("***************Performance Report***************");
             System.out.println("Time(ms): " + (end - start));
             System.out.println("Number of random guesses: " + agent.rpxCount);
+            System.out.println("Number of times SPS was used: " + agent.spxCount);
             double CR= (1 - agent.unknown.size()/cellNumber) *100;
             int completionRate = (int)CR;
             System.out.println("Completion Rate: " + completionRate + "%");

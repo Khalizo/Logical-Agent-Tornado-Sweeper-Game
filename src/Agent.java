@@ -8,7 +8,7 @@ import java.util.Random;
 
 public abstract class Agent {
     protected int rpxCount = 0; //counts the number of random guesses
-    protected int spxCount = 0; //counts the single point probes
+    protected int spxCount = 0; //number of times spx was used
     protected char[][] coveredMap; //parts of the map that is covered
     protected char [][] answerMap; //Original map
     protected int maxX; //Max X coordinate of the map
@@ -18,7 +18,6 @@ public abstract class Agent {
     final char SIGN_UNKNOWN = '?'; //sign for unknown
     final char SIGN_MARK = 'D'; //sign for unknown
     public boolean isSafe = true;
-    protected Board agentboard = new Board(this.getCoveredMap());
 
     //the frontiers of uncovered cells
     public ArrayList<int[]> frontKnown = new ArrayList<int[]>();
@@ -156,7 +155,7 @@ public abstract class Agent {
      * @param y
      */
     public void mark(int x, int y) {
-        coveredMap[x][y] = SIGN_MARK;
+        coveredMap[y][x] = SIGN_MARK;
         tornadoesToMark--;
         for (int i = 0; i < unknown.size(); i++) {
             if (unknown.get(i)[0] == y && unknown.get(i)[1] == x) {
@@ -174,15 +173,17 @@ public abstract class Agent {
         updateFrontUnknown();
         boolean successful = false;
         for (int i = 0; i < frontUnknown.size(); i++) {
-            int x = frontUnknown.get(i)[0];
-            int y = frontUnknown.get(i)[1];
-            ArrayList<int[]> knownNeighbors = getAdjacentSafe(frontUnknown.get(i));
-            for (int[] j: knownNeighbors) {
+            int x = frontUnknown.get(i)[1];
+            int y = frontUnknown.get(i)[0];
+            ArrayList<int[]> knownNeighbours = getAdjacentSafe(frontUnknown.get(i));
+            for (int[] j: knownNeighbours) {
                 //all clear neighbours
-                if (answerMap[j[0]][j[1]] == getAdjacentMarked(j).size()) {
+                if (Character.getNumericValue(answerMap[j[0]][j[1]]) == getAdjacentMarked(j).size()) {
                     probe(x, y);
                     successful = true;
                     System.out.println("spx: probe[" + x + "," + y + "]");
+                    Board agentBoard = new Board(this.getCoveredMap());
+                    agentBoard.printBoard();
                     spxCount++;
                     showMap();
                     i--;
@@ -191,10 +192,12 @@ public abstract class Agent {
                 }
                 else {
                     //all marked neighbours
-                    if (answerMap[j[0]][j[1]] == getAdjacentRisk(j).size()) {
+                    if (Character.getNumericValue( answerMap[j[0]][j[1]]) == getAdjacentRisk(j).size()) {
                         mark(x, y);
                         successful = true;
-                        System.out.println("spx: probe[" + x + "," + y + "]");
+                        System.out.println("spx: mark[" + x + "," + y + "]");
+                        Board agentBoard = new Board(this.getCoveredMap());
+                        agentBoard.printBoard();
                         spxCount++;
                         showMap();
                         i--;
@@ -332,29 +335,31 @@ public abstract class Agent {
         int x = pair[0];
         int y = pair[1];
         ArrayList<int[]> neighbors  = new ArrayList<int[]>();
-        if (x - 1 >= 0  && y -1 >= 0  && coveredMap[y-1][x-1] == SIGN_UNKNOWN){
+        if (x - 1 >= 0  && y -1 >= 0  && coveredMap[y-1][x-1] != SIGN_UNKNOWN && coveredMap[y-1][x-1] != SIGN_MARK){
             neighbors.add(new int[]{x -1, y-1});
         }
 
-        if (x - 1 >= 0 && coveredMap[y][x-1] == SIGN_UNKNOWN){
+        if (x - 1 >= 0 && coveredMap[y][x-1] != SIGN_UNKNOWN && coveredMap[y][x-1] != SIGN_MARK){
             neighbors.add(new int[]{x-1, y});
         }
 
-        if (y + 1 < maxY && coveredMap[y+1][x] == SIGN_UNKNOWN){
+        if (y + 1 < maxY && coveredMap[y+1][x] != SIGN_UNKNOWN && coveredMap[y+1][x] != SIGN_MARK){
             neighbors.add(new int[]{x, y +1 });
         }
 
-        if (x + 1 < maxX && y + 1< maxY && coveredMap[y+1][x +1] == SIGN_UNKNOWN){
+        if (x + 1 < maxX && y + 1< maxY && coveredMap[y+1][x +1] != SIGN_UNKNOWN && coveredMap[y+1][x +1] != SIGN_MARK){
             neighbors.add(new int[]{x + 1, y +1 });
         }
 
-        if (x + 1 < maxX  && coveredMap[y][x +1] == SIGN_UNKNOWN){
+        if (x + 1 < maxX  && coveredMap[y][x +1] != SIGN_UNKNOWN && coveredMap[y][x +1] != SIGN_UNKNOWN){
             neighbors.add(new int[]{x + 1, y});
         }
 
-        if (y - 1  >=0 && coveredMap[y - 1][x] == SIGN_UNKNOWN){
+        if (y - 1  >=0 && coveredMap[y - 1][x] == SIGN_UNKNOWN && coveredMap[y - 1][x] == SIGN_MARK){
             neighbors.add(new int[]{x, y -1});
         }
+
+
 
         return neighbors;
     }
@@ -376,8 +381,8 @@ public abstract class Agent {
     }
 
     /**
-     //     * update the safe front array list.
-     //     */
+          * update the safe front array list.
+        */
     public void updateFrontKnown() {
         frontKnown = new ArrayList<int[]>();
         for (int i = 0; i < maxX; i++) {

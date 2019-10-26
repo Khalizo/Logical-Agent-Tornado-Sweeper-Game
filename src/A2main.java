@@ -23,7 +23,15 @@ public class A2main {
                     break;
 
                 case "SPX":
-                    System.out.println("Almost ready");
+
+
+
+
+
+                    //play the game with the SPX strategy
+                    Game spxGame = new Game(map);
+                    spxGame.playSPX();
+
                     break;
                 case "SATX":
                     System.out.println("Almost there");
