@@ -24,10 +24,6 @@ public class A2main {
 
                 case "SPX":
 
-
-
-
-
                     //play the game with the SPX strategy
                     Game spxGame = new Game(map);
                     spxGame.playSPX();

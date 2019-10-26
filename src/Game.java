@@ -90,7 +90,6 @@ public class Game {
         //loop until all cells are marked or probed
         while(!agent.unknown.isEmpty()) {
 
-
             // if SPS doesn't work resort to RPX
             if (!agent.spx()) {
                 agent.rpx();
@@ -100,17 +99,32 @@ public class Game {
                 break;
             }
         }
+
+
         long end = System.currentTimeMillis();
+        double CR= (1 - agent.unknown.size()/cellNumber) *100;
+        int completionRate = (int)CR;
+
         if (!agent.isSafe) {
+
             System.out.println();
             System.out.println("***************Performance Report***************");
             System.out.println("Time(ms): " + (end - start));
             System.out.println("Number of random guesses: " + agent.rpxCount);
             System.out.println("Number of times SPS was used: " + agent.spxCount);
-            double CR= (1 - agent.unknown.size()/cellNumber) *100;
-            int completionRate = (int)CR;
             System.out.println("Completion Rate: " + completionRate + "%");
+        } else {
+            System.out.println("Well done you have won!!! :)  ");
+            System.out.println();
+            System.out.println("***************Performance Report***************");
+            System.out.println("Time(ms): " + (end - start));
+            System.out.println("Number of random guesses: " + agent.rpxCount);
+            System.out.println("Number of marked tornadoes: " + agent.markCount);
+            System.out.println("Number of times SPX was used: " + agent.spxCount);
+            System.out.println("Completion Rate: " + completionRate + "%");
+
         }
+
     }
 
 

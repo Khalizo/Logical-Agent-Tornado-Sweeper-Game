@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * The agent class for implementing RPX
+ * The agent class for implementing SPX
  * @author 180026646
  */
 
