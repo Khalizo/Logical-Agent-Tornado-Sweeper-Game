@@ -7,6 +7,7 @@ public class Game {
     public Game  (String map) {
         this.map = map;
 
+
     }
 
     /**

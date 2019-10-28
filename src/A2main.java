@@ -1,4 +1,4 @@
-import java.sql.SQLOutput;
+import org.sat4j.specs.ISolver;
 
 /**
  * The agent class for implementing RPX
@@ -7,6 +7,12 @@ import java.sql.SQLOutput;
 
 public class A2main {
     public static void main(String[] args) {
+
+
+
+
+
+
         try {
             String strategy = args[0];
             String map = args[1];

@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7719a07-6758-4a89-bcf4-36acd95f1dd8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SATX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/net_sf_tweety_logics_pl_1_13_with_dependencies.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS5011-A2-Logic-Tornado Sweeper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CS5011-A2-Logic-Tornado Sweeper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/A2main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/A2main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/META-INF/CS5011-A2-Logic-Tornado Sweeper.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SATX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SATX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SPX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SPX.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/A2main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A2main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RPX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RPX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SPX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SPX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SATX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SATX.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/A2main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="75" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="75" />
+            <state relative-caret-position="105">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -37,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="123" selection-start-line="123" selection-end-line="123" />
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="method#playRPX#0;class#Game#0" />
                 <element signature="method#playSPX#0;class#Game#0" />
@@ -50,13 +56,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SATX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="285">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
               <folding>
-                <element signature="e#188#189#0" expanded="true" />
-                <element signature="e#214#215#0" expanded="true" />
-                <element signature="e#262#263#0" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,21 +68,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Agent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="405">
+              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2137#3001#0" />
-                <element signature="e#3072#3160#0" />
-                <element signature="e#3906#3907#0" expanded="true" />
-                <element signature="e#3944#3945#0" expanded="true" />
-                <element signature="e#5732#6819#0" />
-                <element signature="e#6826#7937#0" />
-                <element signature="e#7943#9297#0" />
-                <element signature="e#9304#10364#0" />
-                <element signature="e#10892#11217#0" />
-                <element signature="e#10795#10856#0" />
-                <element signature="e#10795#11268#0" />
+                <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
+                <element signature="docComment;method#mark#0;class#Agent#0" />
+                <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
+                <element signature="method#getAdjacentMarked#0;class#Agent#0" />
+                <element signature="method#getAdjacentRisk#0;class#Agent#0" />
+                <element signature="method#getAdjacentSafe#0;class#Agent#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SPX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="20" column="7" selection-start-line="6" selection-end-line="20" selection-end-column="7" />
+              <folding>
+                <element signature="method#spx#0;class#SPX#0" />
               </folding>
             </state>
           </provider>
@@ -88,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-143">
-              <caret line="188" column="42" lean-forward="true" selection-start-line="188" selection-start-column="42" selection-end-line="188" selection-end-column="42" />
+            <state relative-caret-position="2820">
+              <caret line="188" column="42" selection-start-line="188" selection-start-column="42" selection-end-line="188" selection-end-column="42" />
               <folding>
                 <element signature="e#13238#13239#0" expanded="true" />
                 <element signature="e#13268#13269#0" expanded="true" />
@@ -101,26 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RPX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#131#132#0" expanded="true" />
-                <element signature="e#157#158#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SPX.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
-              <folding>
-                <element signature="e#442#443#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-                <element signature="method#spx#0;class#SPX#0" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -168,18 +160,24 @@
         <option value="$PROJECT_DIR$/src/Board.java" />
         <option value="$PROJECT_DIR$/src/AgentRPX.java" />
         <option value="$PROJECT_DIR$/src/Agent1.java" />
-        <option value="$PROJECT_DIR$/src/SPX.java" />
-        <option value="$PROJECT_DIR$/src/Agent.java" />
         <option value="$PROJECT_DIR$/src/RPX.java" />
-        <option value="$PROJECT_DIR$/src/SATX.java" />
+        <option value="$PROJECT_DIR$/src/Agent.java" />
+        <option value="$PROJECT_DIR$/src/SPX.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/A2main.java" />
+        <option value="$PROJECT_DIR$/src/SATX.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="width" value="1920" />
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="2880" />
+    <option name="width" value="960" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -190,6 +188,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,18 +200,38 @@
             <path>
               <item name="CS5011-A2-Logic-Tornado Sweeper" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS5011-A2-Logic-Tornado Sweeper" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS5011-A2-Logic-Tornado Sweeper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS5011-A2-Logic-Tornado Sweeper" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS5011-A2-Logic-Tornado Sweeper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/sat4j-pb.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -225,7 +245,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SPX M7">
+  <component name="RunManager" selected="Application.SPX TEST0">
     <configuration name="RPX L1" type="Application" factoryName="Application" folderName="RPX">
       <option name="MAIN_CLASS_NAME" value="A2main" />
       <module name="CS5011-A2-Logic-Tornado Sweeper" />
@@ -350,7 +370,7 @@
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07524013" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2620064" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -360,7 +380,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49839914" visible="true" weight="0.33085898" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49839914" visible="true" weight="0.33085898" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49839914" weight="0.2873807" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -369,16 +389,16 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50160086" side_tool="true" weight="0.2873807" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32979852" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32977587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2497332" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32977587" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="PlantUML" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32977587" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.101387404" />
@@ -422,13 +442,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/A2main.java</url>
-          <line>17</line>
+          <line>23</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Agent.java</url>
-          <line>73</line>
+          <line>75</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -440,17 +460,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Agent.java</url>
-          <line>332</line>
+          <line>331</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SATX.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Agent.java</url>
-          <line>86</line>
-          <properties class="Agent">
+          <url>file://$PROJECT_DIR$/src/SPX.java</url>
+          <line>21</line>
+          <properties class="SPX" method="spx">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -499,6 +525,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2820">
+          <caret line="188" column="42" selection-start-line="188" selection-start-column="42" selection-end-line="188" selection-end-column="42" />
+          <folding>
+            <element signature="e#13238#13239#0" expanded="true" />
+            <element signature="e#13268#13269#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RPX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -509,65 +553,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2137#3001#0" />
-            <element signature="e#3072#3160#0" />
-            <element signature="e#3906#3907#0" expanded="true" />
-            <element signature="e#3944#3945#0" expanded="true" />
-            <element signature="e#5732#6819#0" />
-            <element signature="e#6826#7937#0" />
-            <element signature="e#7943#9297#0" />
-            <element signature="e#9304#10364#0" />
-            <element signature="e#10892#11217#0" />
-            <element signature="e#10795#10856#0" />
-            <element signature="e#10795#11268#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-143">
-          <caret line="188" column="42" lean-forward="true" selection-start-line="188" selection-start-column="42" selection-end-line="188" selection-end-column="42" />
-          <folding>
-            <element signature="e#13238#13239#0" expanded="true" />
-            <element signature="e#13268#13269#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RPX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#131#132#0" expanded="true" />
-            <element signature="e#157#158#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SPX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
-          <folding>
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="method#spx#0;class#SPX#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="method#playRPX#0;class#Game#0" />
             <element signature="method#playSPX#0;class#Game#0" />
@@ -575,29 +564,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
+            <element signature="docComment;method#mark#0;class#Agent#0" />
+            <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
+            <element signature="method#getAdjacentMarked#0;class#Agent#0" />
+            <element signature="method#getAdjacentRisk#0;class#Agent#0" />
+            <element signature="method#getAdjacentSafe#0;class#Agent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SPX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="7" selection-start-line="6" selection-end-line="20" selection-end-column="7" />
+          <folding>
+            <element signature="method#spx#0;class#SPX#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SATX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="285">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding>
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#214#215#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/A2main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="75" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="75" />
+        <state relative-caret-position="105">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>CS5011-A2-Logic-Tornado Sweeper</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
@@ -610,6 +679,21 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>libs</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
   </component>
 </project>
