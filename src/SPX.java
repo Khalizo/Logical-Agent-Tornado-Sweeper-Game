@@ -27,15 +27,14 @@ public class SPX extends Agent {
             int y = frontUnknown.get(i)[1];
             ArrayList<int[]> knownNeighbours = getAdjacentSafe(frontUnknown.get(i));
             for (int[] j: knownNeighbours) {
-                //all clear neighbours
+                //all free neighbours
                 if (Character.getNumericValue(answerMap[j[1]][j[0]]) == getAdjacentMarked(j).size()) {
                     probe(x, y);
                     successful = true;
-                    System.out.println("SPX: probe[" + x + "," + y + "]");
+                    System.out.println("SPX: Probe[" + x + "," + y + "]");
                     Board agentBoard = new Board(this.getCoveredMap());
                     agentBoard.printBoard();
                     spxCount++;
-                    showMap();
                     i--;
                     updateFrontUnknown();
                     break;
@@ -45,11 +44,10 @@ public class SPX extends Agent {
                     if (Character.getNumericValue( answerMap[j[1]][j[0]]) == getAdjacentRisk(j).size()) {
                         mark(x, y);
                         successful = true;
-                        System.out.println("SPX: mark[" + x + "," + y + "]");
+                        System.out.println("SPX: Mark[" + x + "," + y + "]");
                         Board agentBoard = new Board(this.getCoveredMap());
                         agentBoard.printBoard();
                         markCount++;
-                        showMap();
                         i--;
                         updateFrontUnknown();
                         break;

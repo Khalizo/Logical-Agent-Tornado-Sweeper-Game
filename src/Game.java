@@ -9,6 +9,9 @@ public class Game {
 
     }
 
+    /**
+     * Method for playing with the random probing strategy for hexagonal worlds (RPX)
+     */
     public void playRPX () {
 
         //this is the map to play with
@@ -53,6 +56,9 @@ public class Game {
         }
     }
 
+    /**
+     * Method for playing with the single-point strategy (SPX)
+     */
     public void playSPX () {
 
         //this is the map to play with
@@ -63,13 +69,11 @@ public class Game {
         SPX agent = new SPX(world.map);
         long start = System.currentTimeMillis();
         Board agentBoard= new Board(agent.getCoveredMap());
-        Board answerBoard = new Board(agent.answerMap);
-        answerBoard.printBoard();
 
         //two starting clues of probing in the top left hand corner and the centre
         double mid = (world.map.length/2);
         int m = (int)mid;
-        System.out.println("Agent will be playing with a " + world.map.length + "x" +world.map.length + " board:");
+        System.out.println("The agent will be playing with a " + world.map.length + "x" +world.map.length + " board:");
         System.out.println("BEWARE - this map has " + agent.tornadoesToMark + " tornadoes!");
         agentBoard.printBoard();
         System.out.println("***************Game Started***************");
@@ -78,7 +82,6 @@ public class Game {
         agent.probe(0, 0);
         agent.probe(m, m);
         agentBoard.printBoard();
-
 
         //loop until all cells are marked or probed
         while(!agent.unknown.isEmpty()) {
@@ -99,7 +102,7 @@ public class Game {
         int completionRate = (int)CR;
 
         if (!agent.isSafe) { //Checks if the agent has probed a tornado or not
-
+            //message for when the agent loses
             System.out.println();
             System.out.println("***************Performance Report***************");
             System.out.println("Time(ms): " + (end - start));
@@ -107,6 +110,7 @@ public class Game {
             System.out.println("Number of times SPS was used: " + agent.spxCount);
             System.out.println("Completion Rate: " + completionRate + "%");
         } else {
+            //message for when the agent has won
             System.out.println("Well done you have won!!! :)  ");
             System.out.println();
             System.out.println("***************Performance Report***************");
@@ -120,6 +124,9 @@ public class Game {
 
     }
 
+    /**
+     * Method for playing with the satisfiability strategy for hexagonal worlds (SATX)
+     */
     public void playSATX () {
 
     }

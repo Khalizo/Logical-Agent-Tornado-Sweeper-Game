@@ -2,27 +2,27 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * The agent class for implementing RPX
+ * The general abstract agent class for all strategies
  * @author 180026646
  */
 
 public abstract class Agent {
-    protected int rpxCount = 0; //counts the number of random guesses
-    protected int spxCount = 0; //number of times spx was used
-    protected int markCount =0; //number of marked tornadoes
-    protected char[][] coveredMap; //parts of the map that is covered
+    protected int rpxCount = 0; //Counts the number of random guesses
+    protected int spxCount = 0; //Number of times spx was used
+    protected int markCount = 0; //Number of marked tornadoes
+    protected char [][] coveredMap; //Parts of the map that is covered
     protected char [][] answerMap; //Original map
     protected int maxX; //Max X coordinate of the map
     protected int maxY; //Max Y coordinate of the map
     protected int tornadoesToMark = 0;
-    public ArrayList<int[]> unknown = new ArrayList<int[]>(); //Unknown hexagons
-    final char SIGN_UNKNOWN = '?'; //sign for unknown
-    final char SIGN_MARK = 'D'; //sign for unknown
-    public boolean isSafe = true;
+    public ArrayList<int[]> unknown = new ArrayList<int[]>(); //Unknown cells
+    final char SIGN_UNKNOWN = '?'; //Sign for unknown
+    final char SIGN_MARK = 'D'; //Sign for unknown
+    public boolean isSafe = true; //Checks for whether the agent has hit a tornado or not.
 
-    //the frontiers of uncovered cells
+    //The frontiers of uncovered cells
     public ArrayList<int[]> frontKnown = new ArrayList<int[]>();
-    //the frontiers of covered cells
+    //The frontiers of covered cells
     public ArrayList<int[]> frontUnknown = new ArrayList<int[]>();
 
 
@@ -35,6 +35,8 @@ public abstract class Agent {
         maxX = map.length;
         maxY = map[0].length;
         coveredMap = new char[maxX][maxY];
+
+        //Dynamically create a map based on the selected map
         for (int i = 0; i < maxX; i++) {
             for (int j = 0; j < maxY; j++) {
                 coveredMap[i][j] = SIGN_UNKNOWN;
@@ -50,7 +52,7 @@ public abstract class Agent {
     }
 
     /**
-     * probe a cell at (x,y)
+     * Probe a cell at (x,y)
      * @param x
      * @param y
      */
@@ -78,12 +80,16 @@ public abstract class Agent {
     }
 
     /**
-     * probe the adjacent cells of 0
+     * Probe the adjacent cells of 0
      * @param x
      * @param y
      */
 
-
+    /**
+     * Method for uncovering the neighbours of a zero cell
+     * @param x
+     * @param y
+     */
     public void uncoverZeroNeighbours (int x, int y  ) {
 
 
@@ -114,16 +120,9 @@ public abstract class Agent {
 
     }
 
-    /**
-     * show the current state of the map
-     */
-
-    public void showMap() {
-
-    }
 
     /**
-     * make a random probe for all the covered cells
+     * Make a random probe for all the covered cells
      */
     public void rpx () {
         ArrayList<int[]> front = this.unknown;
@@ -146,14 +145,14 @@ public abstract class Agent {
 
     /**
      * Getter for returning the covered map
-     * @return
+     * @return coveredMap
      */
     public char[][] getCoveredMap (){
         return this.coveredMap;
     }
 
     /**
-     * mark a cell at (x,y)
+     * Mark a cell at (x,y)
      * @param x
      * @param y
      */
@@ -172,9 +171,9 @@ public abstract class Agent {
 
 
     /**
-     * finds the adjacent unknown neighbours
+     * Finds the adjacent unknown neighbours
      * @param pair
-     * @return
+     * @return neighbors
      */
     protected ArrayList<int[]> getAdjacentUnknown(int[] pair) {
         int x = pair[0];
@@ -209,9 +208,9 @@ public abstract class Agent {
 
 
     /**
-     * find the adjacent marked neighbours.
+     * Find the adjacent marked neighbours.
      * @param pair
-     * @return
+     * @return neighbors
      */
     protected ArrayList<int[]> getAdjacentMarked(int[] pair) {
         int x = pair[0];
@@ -247,9 +246,9 @@ public abstract class Agent {
     }
 
     /**
-     * gets all marked and unknown cells
+     * Gets all marked and unknown cells
      * @param pair
-     * @return
+     * @return neighbors
      */
     protected ArrayList<int[]> getAdjacentRisk(int[] pair) {
         int x = pair[0];
@@ -286,9 +285,9 @@ public abstract class Agent {
 
 
     /**
-     * get adjacent safe cells
+     * Get adjacent safe cells
      * @param pair
-     * @return
+     * @return neighbors
      */
     protected ArrayList<int[]> getAdjacentSafe(int[] pair) {
         int x = pair[0];
@@ -327,7 +326,7 @@ public abstract class Agent {
 
 
     /**
-     * update the covered front array list.
+     *  Update the front array list of covered cells
      * */
     public void updateFrontUnknown() {
         frontUnknown = new ArrayList<int[]>();
@@ -342,8 +341,8 @@ public abstract class Agent {
     }
 
     /**
-          * update the safe front array list.
-        */
+     *  Update the safe front array list.
+     */
     public void updateFrontKnown() {
         frontKnown = new ArrayList<int[]>();
         for (int i = 0; i < maxX; i++) {
