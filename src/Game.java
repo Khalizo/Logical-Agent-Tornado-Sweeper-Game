@@ -139,7 +139,7 @@ public class Game {
         long start = System.currentTimeMillis();
         Board agentBoard= new Board(agent.getCoveredMap());
 
-        String kbu = "(A || B)&& !(A || !B)";
+        String kbu = "(A | B)& ~(A | ~B)";
         agent.getClauses(kbu);
 
 

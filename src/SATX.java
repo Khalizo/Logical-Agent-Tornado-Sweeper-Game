@@ -2,6 +2,15 @@ import net.sf.tweety.commons.Interpretation;
 import net.sf.tweety.logics.pl.parser.PlParser;
 import net.sf.tweety.logics.pl.sat.SatSolver;
 import net.sf.tweety.logics.pl.syntax.*;
+import org.logicng.formulas.Formula;
+import org.logicng.formulas.FormulaFactory;
+import org.logicng.io.parsers.PropositionalParser;
+import org.logicng.io.writers.FormulaDimacsFileWriter;
+import org.sat4j.pb.SolverFactory;
+import org.sat4j.reader.DimacsReader;
+import org.sat4j.reader.Reader;
+import org.sat4j.specs.IProblem;
+import org.sat4j.specs.ISolver;
 
 import java.io.IOException;
 import java.sql.SQLOutput;
@@ -172,58 +181,66 @@ public class SATX extends Agent {
     public ArrayList<int[]> getClauses (String kbu) {
         ArrayList<int[]> clauses = new ArrayList<>();
         try {
-            //Parse the KBU formula
-            PlBeliefSet kb = new PlBeliefSet();
-            PlParser parser = new PlParser();
-            kb.add((PlFormula)parser.parseFormula(kbu));
+
+            //Parse the KBU formula LogicNG
+            FormulaFactory f = new FormulaFactory();
+            PropositionalParser p = new PropositionalParser(f);
+            Formula formula = p.parse(kbu);
 
             //convert to CNF
-            Conjunction conj = kb.toCnf();
+            Formula cnf = formula.cnf();
 
-            //Retrieve the clauses
-            ListIterator<PlFormula> iter =conj.listIterator();
-            System.out.println(kb);
-            System.out.println(conj);
+            //Convert to DIMACS
+            FormulaDimacsFileWriter.write("dimacs.cnf",cnf,false);
 
-            //Convert from CNF to DIMACS
-
-            //Retrieve the list of propositions
-            PlSignature signature = kb.getSignature();
-            Iterator<Proposition> sigList = signature.iterator();
-            HashMap<String, Integer> propositions = new HashMap <String, Integer> ();
-
-            //Assign each proposition to an integer using a hashmap
-            int propCount = 1;
-            while(sigList.hasNext()) {
-                Proposition literal = sigList.next();
-                propositions.put(literal.toString(),propCount);
-                propCount++;
-            }
-            System.out.println(propositions);
-            System.out.println(propositions.get("A"));
-
-            //remove CNF symbols and replace with DIMACS ones
-            ArrayList<String> stringClauses = new ArrayList<>();
-            while(iter.hasNext()) {
-                PlFormula clause =iter.next();
-                String clauseStr = clause.toString();
-                String  replace1 = clauseStr.replace("||"," ").replace("!","-");
-                stringClauses.add(replace1);
-                System.out.println(clause.getLiterals().toString().toCharArray());
+            //Feed the solver
+            ISolver solver = SolverFactory.newDefault();
+            solver.setTimeout(3600);
+            Reader reader = new DimacsReader(solver);
+            IProblem problem = reader.parseInstance("dimacs.cnf");
 
 
-
-
-//                System.out.println(stringClauses);
-//                System.out.println(clause.getSignature());
-//                System.out.println(stringClauses);
-//                System.out.println(clause.getLiterals());
-//                for(PlFormula l:clause.getLiterals()){
-//                    System.out.println(l);
+//            //Retrieve the clauses
+//            ListIterator<PlFormula> iter =conj.listIterator();
+//            System.out.println(kb);
+//            System.out.println(conj);
 //
-//                }
-            }
+//            //Convert from CNF to DIMACS
+//
+//            //Retrieve the list of propositions
+//            PlSignature signature = kb.getSignature();
+//            Iterator<Proposition> sigList = signature.iterator();
+//            HashMap<String, Integer> propositions = new HashMap <String, Integer> ();
+//
+//            //Assign each proposition to an integer using a hashmap
+//            int propCount = 1;
+//            while(sigList.hasNext()) {
+//                Proposition literal = sigList.next();
+//                propositions.put(literal.toString(),propCount);
+//                propCount++;
+//            }
+//            System.out.println(propositions);
+//            System.out.println(propositions.get("A"));
+//
+//            //remove CNF symbols and replace with DIMACS ones
+//            ArrayList<String> stringClauses = new ArrayList<>();
+//            while(iter.hasNext()) {
+//                PlFormula clause =iter.next();
+//                String  clauseStr = clause.getLiterals().toString().replace("!","-").replace("[","").replace("]","");
+//                stringClauses.add(clauseStr);
+//
+//
+////                System.out.println(stringClauses);
+////                System.out.println(clause.getSignature());
+////                System.out.println(stringClauses);
+////                System.out.println(clause.getLiterals());
+////                for(PlFormula l:clause.getLiterals()){
+////                    System.out.println(l);
+////
+////                }
+//            }
 //            System.out.println(stringClauses);
+
 
 
 //            ArrayList<String> integers = new ArrayList<>();
@@ -247,7 +264,13 @@ public class SATX extends Agent {
 
 
 
+        } catch (org.logicng.io.parsers.ParserException e) {
+
         } catch (IOException e) {
+
+        } catch (org.sat4j.reader.ParseFormatException e) {
+
+        } catch (org.sat4j.specs.ContradictionException e) {
 
         }
 
