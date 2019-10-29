@@ -1,11 +1,11 @@
+import net.sf.tweety.commons.Interpretation;
 import net.sf.tweety.logics.pl.parser.PlParser;
+import net.sf.tweety.logics.pl.sat.SatSolver;
 import net.sf.tweety.logics.pl.syntax.*;
 
 import java.io.IOException;
 import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ListIterator;
+import java.util.*;
 
 /**
  * The agent class for implementing RPX
@@ -176,34 +176,72 @@ public class SATX extends Agent {
             PlBeliefSet kb = new PlBeliefSet();
             PlParser parser = new PlParser();
             kb.add((PlFormula)parser.parseFormula(kbu));
+
             //convert to CNF
             Conjunction conj = kb.toCnf();
+
             //Retrieve the clauses
             ListIterator<PlFormula> iter =conj.listIterator();
             System.out.println(kb);
             System.out.println(conj);
 
+            //Convert from CNF to DIMACS
 
+            //Retrieve the list of propositions
             PlSignature signature = kb.getSignature();
             Iterator<Proposition> sigList = signature.iterator();
+            HashMap<String, Integer> propositions = new HashMap <String, Integer> ();
+
+            //Assign each proposition to an integer using a hashmap
             int propCount = 1;
             while(sigList.hasNext()) {
                 Proposition literal = sigList.next();
-                String assign = literal.toString() + ":"+ propCount;
-                System.out.println(assign);
+                propositions.put(literal.toString(),propCount);
                 propCount++;
-
             }
+            System.out.println(propositions);
+            System.out.println(propositions.get("A"));
 
+            //remove CNF symbols and replace with DIMACS ones
+            ArrayList<String> stringClauses = new ArrayList<>();
             while(iter.hasNext()) {
                 PlFormula clause =iter.next();
-                System.out.println(clause);
+                String clauseStr = clause.toString();
+                String  replace1 = clauseStr.replace("||"," ").replace("!","-");
+                stringClauses.add(replace1);
+                System.out.println(clause.getLiterals().toString().toCharArray());
+
+
+
+
+//                System.out.println(stringClauses);
+//                System.out.println(clause.getSignature());
+//                System.out.println(stringClauses);
 //                System.out.println(clause.getLiterals());
 //                for(PlFormula l:clause.getLiterals()){
 //                    System.out.println(l);
 //
 //                }
             }
+//            System.out.println(stringClauses);
+
+
+//            ArrayList<String> integers = new ArrayList<>();
+//            for (String replace1: stringClauses) {
+//
+//                for (HashMap.Entry<String, Integer> entry: propositions.entrySet()){
+//                    String replace2 = replace1.replace(entry.getKey(), entry.getValue().toString());
+//                    integers.add(replace2);
+//                }
+//
+//            }
+//
+//            System.out.println(integers);
+
+
+
+
+
 
 
 
