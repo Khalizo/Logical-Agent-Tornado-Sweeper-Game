@@ -1,18 +1,21 @@
+import net.sf.tweety.commons.Interpretation;
+import net.sf.tweety.logics.pl.parser.PlParser;
+import net.sf.tweety.logics.pl.sat.SatSolver;
+import net.sf.tweety.logics.pl.syntax.Conjunction;
+import net.sf.tweety.logics.pl.syntax.PlBeliefSet;
+import net.sf.tweety.logics.pl.syntax.PlFormula;
 import org.sat4j.specs.ISolver;
 
+import java.io.IOException;
+import java.util.Collection;
+
 /**
- * The agent class for implementing RPX
+ * Main method for playing the game with all strategies
  * @author 180026646
  */
 
 public class A2main {
     public static void main(String[] args) {
-
-
-
-
-
-
         try {
             String strategy = args[0];
             String map = args[1];
@@ -28,7 +31,7 @@ public class A2main {
                     spxGame.playSPX();
                     break;
                 case "SATX":
-                    //play the game with the SPX strategy
+                    //play the game with the SATX strategy
                     Game satxGame = new Game(map);
                     satxGame.playSATX();
                     break;

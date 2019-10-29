@@ -130,6 +130,19 @@ public class Game {
      */
     public void playSATX () {
 
+        //this is the map to play with
+        World world = World.valueOf(this.map);
+        double cellNumber = world.map.length * world.map.length;
+
+        //instantiate the RPX agent
+        SATX agent = new SATX(world.map);
+        long start = System.currentTimeMillis();
+        Board agentBoard= new Board(agent.getCoveredMap());
+
+        String kbu = "(A || B)&& !(A || !B)";
+        agent.getClauses(kbu);
+
+
     }
 
 
