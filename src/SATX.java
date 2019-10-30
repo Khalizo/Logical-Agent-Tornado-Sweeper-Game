@@ -22,7 +22,7 @@ import java.util.*;
  */
 
 public class SATX extends Agent {
-    protected int dlsCount = 0;
+    protected int satxCount = 0;
 
 
     /**
@@ -50,26 +50,30 @@ public class SATX extends Agent {
             int x = frontUnknown.get(i)[0];
             int y = frontUnknown.get(i)[1];
             //generate the logic sentence for this unknown frontier
-            String p = "N_" + x + "_" + + y;
-            //negative DPLLSat
+            String p = "T_" + x + "_" + + y;
+            //negative SAT
             String prove = KBU + " & ~" + p;
-            boolean ans = displayDPLLSatisfiableStatus(prove);
+            boolean ans = SATSatisfiable(prove);
             if (!ans) {
                 //if the answer is false, mark this cell.
-                System.out.println("DLS: mark[" + x + "," + y + "]");
-                dlsCount++;
                 mark(x, y);
+                System.out.println("SATX: Mark[" + x + "," + y + "]");
+                Board agentBoard = new Board(this.getCoveredMap());
+                agentBoard.printBoard();
+                satxCount++;
                 successful = true;
             }
             else {
-                //positive DPLLSat
+                //positive SAT
                 prove = KBU + " & " + p;
-                ans = displayDPLLSatisfiableStatus(prove);
+                ans = SATSatisfiable(prove);
                 if (!ans) {
                     //if the answer is false, probe the cell
-                    System.out.println("DLS: probe[" + x + "," + y + "]");
-                    dlsCount++;
                     probe(x, y);
+                    System.out.println("SATX: Probe[" + x + "," + y + "]");
+                    Board agentBoard = new Board(this.getCoveredMap());
+                    agentBoard.printBoard();
+                    satxCount++;
                     successful = true;
                 }
             }
@@ -146,15 +150,15 @@ public class SATX extends Agent {
             int[] array = possibleSet.get(j);
             String s = "(";
             for(int i = 0; i < array.length; i++) {
-                if (array[i] == 0) {
-                    s += "!"; //Tweety syntax for NOT
+                if (array[i] == 0 {
+                    s += "~"; //LOGICng syntax for NOT
                 }
                 s += "T_"; //T for tornado
                 s += unknownNeighbors.get(i)[0];
                 s += "_";
                 s += unknownNeighbors.get(i)[1];
                 if (i != array.length - 1) {
-                    s += " && ";
+                    s += " & ";
                 }
             }
             s += ")";
@@ -168,24 +172,17 @@ public class SATX extends Agent {
     }
 
     /**
-     * this method is given in the lecture slide, invoking the DPLLSat judgement method from the library.
+     * this method is given in the lecture slide, invoking the SAT4J judgement method from the library.
      * @param query
      * @return
      */
-    public static boolean displayDPLLSatisfiableStatus(String query) {
-
-            return false;
-
-    }
-
-    public ArrayList<int[]> getClauses (String kbu) {
-        ArrayList<int[]> clauses = new ArrayList<>();
+    public static boolean SATSatisfiable(String query) {
         try {
 
             //Parse the KBU formula LogicNG
             FormulaFactory f = new FormulaFactory();
             PropositionalParser p = new PropositionalParser(f);
-            Formula formula = p.parse(kbu);
+            Formula formula = p.parse(query);
 
             //convert to CNF
             Formula cnf = formula.cnf();
@@ -199,70 +196,15 @@ public class SATX extends Agent {
             Reader reader = new DimacsReader(solver);
             IProblem problem = reader.parseInstance("dimacs.cnf");
 
+            //Check satisfiability
+            if (problem.isSatisfiable()) {
+                System.out.println(query + " is satisfiable");
+                return true;
 
-//            //Retrieve the clauses
-//            ListIterator<PlFormula> iter =conj.listIterator();
-//            System.out.println(kb);
-//            System.out.println(conj);
-//
-//            //Convert from CNF to DIMACS
-//
-//            //Retrieve the list of propositions
-//            PlSignature signature = kb.getSignature();
-//            Iterator<Proposition> sigList = signature.iterator();
-//            HashMap<String, Integer> propositions = new HashMap <String, Integer> ();
-//
-//            //Assign each proposition to an integer using a hashmap
-//            int propCount = 1;
-//            while(sigList.hasNext()) {
-//                Proposition literal = sigList.next();
-//                propositions.put(literal.toString(),propCount);
-//                propCount++;
-//            }
-//            System.out.println(propositions);
-//            System.out.println(propositions.get("A"));
-//
-//            //remove CNF symbols and replace with DIMACS ones
-//            ArrayList<String> stringClauses = new ArrayList<>();
-//            while(iter.hasNext()) {
-//                PlFormula clause =iter.next();
-//                String  clauseStr = clause.getLiterals().toString().replace("!","-").replace("[","").replace("]","");
-//                stringClauses.add(clauseStr);
-//
-//
-////                System.out.println(stringClauses);
-////                System.out.println(clause.getSignature());
-////                System.out.println(stringClauses);
-////                System.out.println(clause.getLiterals());
-////                for(PlFormula l:clause.getLiterals()){
-////                    System.out.println(l);
-////
-////                }
-//            }
-//            System.out.println(stringClauses);
-
-
-
-//            ArrayList<String> integers = new ArrayList<>();
-//            for (String replace1: stringClauses) {
-//
-//                for (HashMap.Entry<String, Integer> entry: propositions.entrySet()){
-//                    String replace2 = replace1.replace(entry.getKey(), entry.getValue().toString());
-//                    integers.add(replace2);
-//                }
-//
-//            }
-//
-//            System.out.println(integers);
-
-
-
-
-
-
-
-
-
+            } else {
+                System.out.println(query + " is NOT satisfiable");
+                return false;
+            }
 
         } catch (org.logicng.io.parsers.ParserException e) {
 
@@ -272,11 +214,20 @@ public class SATX extends Agent {
 
         } catch (org.sat4j.specs.ContradictionException e) {
 
+
+        } catch (org.sat4j.specs.TimeoutException e){
+
         }
-
-
-
-        return clauses;
+        return  false;
     }
+
+//    public ArrayList<int[]> getClauses (String kbu) {
+//        ArrayList<int[]> clauses = new ArrayList<>();
+//
+//
+//
+//
+//        return clauses;
+//    }
 
 }

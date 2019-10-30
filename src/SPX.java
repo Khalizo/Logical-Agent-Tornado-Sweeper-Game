@@ -15,48 +15,6 @@ public class SPX extends Agent {
         super(map);
     }
 
-    /**
-     * Implementation of the sps strategy
-     * @return
-     */
-    public boolean spx () {
-        updateFrontUnknown();
-        boolean successful = false;
-        for (int i = 0; i < frontUnknown.size(); i++) {
-            int x = frontUnknown.get(i)[0];
-            int y = frontUnknown.get(i)[1];
-            ArrayList<int[]> knownNeighbours = getAdjacentSafe(frontUnknown.get(i));
-            for (int[] j: knownNeighbours) {
-                //all free neighbours
-                if (Character.getNumericValue(answerMap[j[1]][j[0]]) == getAdjacentMarked(j).size()) {
-                    probe(x, y);
-                    successful = true;
-                    System.out.println("SPX: Probe[" + x + "," + y + "]");
-                    Board agentBoard = new Board(this.getCoveredMap());
-                    agentBoard.printBoard();
-                    spxCount++;
-                    i--;
-                    updateFrontUnknown();
-                    break;
-                }
-                else {
-                    //all marked neighbours
-                    if (Character.getNumericValue( answerMap[j[1]][j[0]]) == getAdjacentRisk(j).size()) {
-                        mark(x, y);
-                        successful = true;
-                        System.out.println("SPX: Mark[" + x + "," + y + "]");
-                        Board agentBoard = new Board(this.getCoveredMap());
-                        agentBoard.printBoard();
-                        markCount++;
-                        i--;
-                        updateFrontUnknown();
-                        break;
-                    }
-                }
-            }
-        }
-        return successful;
 
-    }
 
 }
