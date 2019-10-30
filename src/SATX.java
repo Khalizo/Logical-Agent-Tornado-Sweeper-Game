@@ -135,23 +135,25 @@ public class SATX extends Agent {
             possibleSet.add(set.clone());
         }
         //leave combinations with correct number of tornadoes only
-        for (int i = 0; i < possibleSet.size(); i++) {
-            int sum = 0;
-            for (int j: possibleSet.get(i)) {
-                if (j == 1) sum++;
-            }
-            if (sum != count) {
-                possibleSet.remove(i);
-                i--;
-            }
-        }
+//        for (int i = 0; i < possibleSet.size(); i++) {
+//            int sum = 0;
+//            for (int j: possibleSet.get(i)) {
+//                if (j != 1) {
+//                    sum++;
+//                }
+//            }
+//            if (sum != count) {
+//                possibleSet.remove(i);
+//                i--;
+//            }
+//        }
         //generate a proposition for this cell from the binary l ist
         for (int j = 0; j < possibleSet.size(); j++) {
             int[] array = possibleSet.get(j);
             String s = "(";
             for(int i = 0; i < array.length; i++) {
-                if (array[i] == 0 {
-                    s += "~"; //LOGICng syntax for NOT
+                if (array[i] == 0) {
+                    s += "~"; //LogicNG syntax for NOT
                 }
                 s += "T_"; //T for tornado
                 s += unknownNeighbors.get(i)[0];
@@ -218,7 +220,7 @@ public class SATX extends Agent {
         } catch (org.sat4j.specs.TimeoutException e){
 
         }
-        return  false;
+        return  true;
     }
 
 //    public ArrayList<int[]> getClauses (String kbu) {
