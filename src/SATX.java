@@ -197,10 +197,10 @@ public class SATX extends Agent {
 
             //Check satisfiability
             if (problem.isSatisfiable()) {
-//                System.out.println(query + " is satisfiable");
+                System.out.println(query + " is satisfiable");
                 return true;
             } else {
-//                System.out.println(query + " is NOT satisfiable");
+                System.out.println(query + " is NOT satisfiable");
                 return false;
             }
 

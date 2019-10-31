@@ -9,7 +9,7 @@ import java.util.Random;
 public abstract class Agent {
     protected int rpxCount = 0; //Counts the number of random guesses
     protected int spxCount = 0; //Number of times spx was used
-    protected int flagCount = 0; //Number of marked tornadoes
+    protected int flagCount = 0; //Number of flagged tornadoes
     protected char [][] coveredMap; //Parts of the map that is covered
     protected char [][] answerMap; //Original map
     protected int maxX; //Max X coordinate of the map
@@ -433,9 +433,6 @@ public abstract class Agent {
                 if (Character.getNumericValue(answerMap[j[1]][j[0]]) == getAdjacentMarked(j).size()) {
                     probe(x, y);
                     successful = true;
-//                    System.out.println("SPX: Probe[" + x + "," + y + "]");
-                    Board agentBoard = new Board(this.getCoveredMap());
-//                    agentBoard.printBoard();
                     spxCount++;
                     i--;
                     updateFrontUnknown();
@@ -446,9 +443,6 @@ public abstract class Agent {
                     if (Character.getNumericValue( answerMap[j[1]][j[0]]) == getAdjacentRisk(j).size()) {
                         mark(x, y);
                         successful = true;
-//                        System.out.println("SPX: Mark[" + x + "," + y + "]");
-                        Board agentBoard = new Board(this.getCoveredMap());
-//                        agentBoard.printBoard();
                         flagCount++;
                         i--;
                         updateFrontUnknown();

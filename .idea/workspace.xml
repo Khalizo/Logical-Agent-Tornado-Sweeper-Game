@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7719a07-6758-4a89-bcf4-36acd95f1dd8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ESX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PRPX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dimacs.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/dimacs.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/A2main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/A2main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/META-INF/CS5011-A2-Logic-Tornado Sweeper.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SATX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SATX.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/A2main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A2main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Performance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SATX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SATX.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,44 +32,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/A2main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+            <state relative-caret-position="257">
+              <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SATX.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="223" column="33" selection-start-line="223" selection-start-column="33" selection-end-line="223" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#satx#0;class#SATX#0" />
-                <element signature="method#getKBU#0;class#SATX#0" />
-                <element signature="method#getThisKBU#0;class#SATX#0" />
-                <element signature="method#SATSatisfiable#0;class#SATX#0" />
-                <element signature="method#satx#1;class#SATX#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Agent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="422" column="7" lean-forward="true" selection-start-line="418" selection-start-column="2" selection-end-line="422" selection-end-column="7" />
-              <folding>
-                <element signature="method#probe#0;class#Agent#0" />
-                <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
-                <element signature="method#mark#0;class#Agent#0" />
-                <element signature="method#spx#0;class#Agent#0" />
-                <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
-                <element signature="method#getAdjacentMarked#0;class#Agent#0" />
               </folding>
             </state>
           </provider>
@@ -73,11 +44,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Evaluation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="146" column="42" lean-forward="true" selection-start-line="146" selection-start-column="42" selection-end-line="146" selection-end-column="42" />
+            <state relative-caret-position="750">
+              <caret line="295" column="51" lean-forward="true" selection-start-line="295" selection-start-column="51" selection-end-line="295" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#playSPX#0;class#Performance#0" />
+                <element signature="method#getSPXResults#0;class#Evaluation#0" />
+                <element signature="method#getSATXResults#0;class#Evaluation#0" />
+                <element signature="method#getSATXResults#1;class#Evaluation#0" />
               </folding>
             </state>
           </provider>
@@ -86,11 +59,87 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="192" column="81" selection-start-line="192" selection-start-column="81" selection-end-line="192" selection-end-column="81" />
+            <state relative-caret-position="1290">
+              <caret line="320" column="9" lean-forward="true" selection-start-line="315" selection-start-column="7" selection-end-line="320" selection-end-column="9" />
               <folding>
-                <element signature="method#playRPX#0;class#Game#0" />
                 <element signature="method#playSPX#0;class#Game#0" />
+                <element signature="method#playSATX#0;class#Game#0" />
+                <element signature="method#playESX#0;class#Game#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PRPX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="86" column="36" lean-forward="true" selection-start-line="86" selection-start-column="36" selection-end-line="86" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#srgs#0;class#PRPX#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PCell.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SATX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-9">
+              <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+              <folding>
+                <element signature="method#satx#0;class#SATX#0" />
+                <element signature="method#getKBU#0;class#SATX#0" />
+                <element signature="method#getThisKBU#0;class#SATX#0" />
+                <element signature="method#satxNoPrint#0;class#SATX#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Agent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-86">
+              <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
+              <folding>
+                <element signature="method#Agent#0;class#Agent#0" />
+                <element signature="method#probe#0;class#Agent#0" />
+                <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
+                <element signature="method#spx#0;class#Agent#0" />
+                <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
+                <element signature="method#getAdjacentMarked#0;class#Agent#0" />
+                <element signature="method#getAdjacentRisk#0;class#Agent#0" />
+                <element signature="method#getAdjacentSafe#0;class#Agent#0" />
+                <element signature="method#rpxNoPrint#0;class#Agent#0" />
+                <element signature="method#spxNoPrint#0;class#Agent#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ESX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+              <folding>
+                <element signature="method#esx#0;class#ESX#0" />
+                <element signature="method#isContained#0;class#ESX#0" />
+                <element signature="method#probeEsx#0;class#ESX#0" />
+                <element signature="method#flagEsx#0;class#ESX#0" />
+                <element signature="method#esx#1;class#ESX#0" />
+                <element signature="method#probeEsx#1;class#ESX#0" />
               </folding>
             </state>
           </provider>
@@ -137,11 +186,14 @@
         <option value="$PROJECT_DIR$/src/Tweety.java" />
         <option value="$PROJECT_DIR$/src/SPX.java" />
         <option value="$PROJECT_DIR$/src/Performance.java" />
+        <option value="$PROJECT_DIR$/src/SATX.java" />
         <option value="$PROJECT_DIR$/src/Agent.java" />
+        <option value="$PROJECT_DIR$/src/PCell.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
+        <option value="$PROJECT_DIR$/src/PRPX.java" />
         <option value="$PROJECT_DIR$/src/A2main.java" />
         <option value="$PROJECT_DIR$/src/Evaluation.java" />
-        <option value="$PROJECT_DIR$/src/SATX.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
+        <option value="$PROJECT_DIR$/src/ESX.java" />
       </list>
     </option>
   </component>
@@ -221,7 +273,31 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SATX TEST0">
+  <component name="RunManager" selected="Application.ESX TEST0 ">
+    <configuration name="ESX M2" type="Application" factoryName="Application" folderName="ESX">
+      <option name="MAIN_CLASS_NAME" value="A2main" />
+      <module name="CS5011-A2-Logic-Tornado Sweeper" />
+      <option name="PROGRAM_PARAMETERS" value="ESX M2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ESX TEST0 " type="Application" factoryName="Application" folderName="ESX">
+      <option name="MAIN_CLASS_NAME" value="A2main" />
+      <module name="CS5011-A2-Logic-Tornado Sweeper" />
+      <option name="PROGRAM_PARAMETERS" value="ESX TEST0" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PRPX TEST0" type="Application" factoryName="Application" folderName="PRPX">
+      <option name="MAIN_CLASS_NAME" value="A2main" />
+      <module name="CS5011-A2-Logic-Tornado Sweeper" />
+      <option name="PROGRAM_PARAMETERS" value="PRPX TEST0" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RPX L1" type="Application" factoryName="Application" folderName="RPX Large">
       <option name="MAIN_CLASS_NAME" value="A2main" />
       <module name="CS5011-A2-Logic-Tornado Sweeper" />
@@ -845,6 +921,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.ESX TEST0 " />
+      <item itemvalue="Application.ESX M2" />
       <item itemvalue="Application.RPX Test0" />
       <item itemvalue="Application.RPX Test1" />
       <item itemvalue="Application.RPX Test2" />
@@ -914,6 +992,7 @@
       <item itemvalue="Application.SPX TEST0" />
       <item itemvalue="Application.SPX TEST2" />
       <item itemvalue="Application.SPX TEST1" />
+      <item itemvalue="Application.PRPX TEST0" />
       <item itemvalue="Multirun.RPX Medium" />
       <item itemvalue="Multirun.RPX Small" />
       <item itemvalue="Multirun.RPX Large" />
@@ -936,7 +1015,7 @@
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49702382" visible="true" weight="0.30469584" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49702382" visible="true" weight="0.31216648" />
       <window_info id="Structure" order="1" sideWeight="0.5029762" side_tool="true" weight="0.291889" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1037,6 +1116,120 @@
           <properties />
           <option name="timeStamp" value="87" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Agent.java</url>
+          <line>159</line>
+          <properties />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>66</line>
+          <properties />
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>70</line>
+          <properties />
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PRPX.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ESX.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/SPX.java</url>
           <line>17</line>
@@ -1055,12 +1248,6 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="s" />
-        <watch expression="j" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CS5011_A2_Logic_Tornado_Sweeper$SPX_S1.ic" NAME="SPX S1 Coverage Results" MODIFIED="1572105874601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -1167,9 +1354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dimacs.cnf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1180,64 +1364,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/A2main.java">
+    <entry file="file://$PROJECT_DIR$/dimacs.cnf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        <state relative-caret-position="195">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SATX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#satx#0;class#SATX#0" />
+            <element signature="method#getKBU#0;class#SATX#0" />
+            <element signature="method#getThisKBU#0;class#SATX#0" />
+            <element signature="method#satxNoPrint#0;class#SATX#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Agent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="422" column="7" lean-forward="true" selection-start-line="418" selection-start-column="2" selection-end-line="422" selection-end-column="7" />
+        <state relative-caret-position="-86">
+          <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
           <folding>
+            <element signature="method#Agent#0;class#Agent#0" />
             <element signature="method#probe#0;class#Agent#0" />
             <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
-            <element signature="method#mark#0;class#Agent#0" />
             <element signature="method#spx#0;class#Agent#0" />
             <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
             <element signature="method#getAdjacentMarked#0;class#Agent#0" />
+            <element signature="method#getAdjacentRisk#0;class#Agent#0" />
+            <element signature="method#getAdjacentSafe#0;class#Agent#0" />
+            <element signature="method#rpxNoPrint#0;class#Agent#0" />
+            <element signature="method#spxNoPrint#0;class#Agent#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SATX.java">
+    <entry file="file://$PROJECT_DIR$/src/PRPX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="223" column="33" selection-start-line="223" selection-start-column="33" selection-end-line="223" selection-end-column="33" />
+        <state relative-caret-position="450">
+          <caret line="86" column="36" lean-forward="true" selection-start-line="86" selection-start-column="36" selection-end-line="86" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#satx#0;class#SATX#0" />
-            <element signature="method#getKBU#0;class#SATX#0" />
-            <element signature="method#getThisKBU#0;class#SATX#0" />
-            <element signature="method#SATSatisfiable#0;class#SATX#0" />
-            <element signature="method#satx#1;class#SATX#0" />
+            <element signature="method#srgs#0;class#PRPX#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A2main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ESX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+          <folding>
+            <element signature="method#esx#0;class#ESX#0" />
+            <element signature="method#isContained#0;class#ESX#0" />
+            <element signature="method#probeEsx#0;class#ESX#0" />
+            <element signature="method#flagEsx#0;class#ESX#0" />
+            <element signature="method#esx#1;class#ESX#0" />
+            <element signature="method#probeEsx#1;class#ESX#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="192" column="81" selection-start-line="192" selection-start-column="81" selection-end-line="192" selection-end-column="81" />
+        <state relative-caret-position="1290">
+          <caret line="320" column="9" lean-forward="true" selection-start-line="315" selection-start-column="7" selection-end-line="320" selection-end-column="9" />
           <folding>
-            <element signature="method#playRPX#0;class#Game#0" />
             <element signature="method#playSPX#0;class#Game#0" />
+            <element signature="method#playSATX#0;class#Game#0" />
+            <element signature="method#playESX#0;class#Game#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Evaluation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="146" column="42" lean-forward="true" selection-start-line="146" selection-start-column="42" selection-end-line="146" selection-end-column="42" />
+        <state relative-caret-position="750">
+          <caret line="295" column="51" lean-forward="true" selection-start-line="295" selection-start-column="51" selection-end-line="295" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#playSPX#0;class#Performance#0" />
+            <element signature="method#getSPXResults#0;class#Evaluation#0" />
+            <element signature="method#getSATXResults#0;class#Evaluation#0" />
+            <element signature="method#getSATXResults#1;class#Evaluation#0" />
           </folding>
         </state>
       </provider>

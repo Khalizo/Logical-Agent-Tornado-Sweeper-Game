@@ -27,11 +27,25 @@ public class A2main {
                     break;
                 case "SATX":
                     //play the game with the SATX strategy
+                    Game satxGame = new Game(map);
+                    satxGame.playSATX();
+                    break;
+                case "ESX":
+                    //play the game with the ESX strategy
+                    Evaluation esxGame = new Evaluation();
+                    esxGame.getESXResults();
+//                    Game esxGame = new Game(map);
+//                    esxGame.playESX();
+                    break;
+                case "PRPX":
+                    //play the game with the PRPX strategy
 
-                    Evaluation satx = new Evaluation();
-                    satx.getSATXResults();
-//                    Game satxGame = new Game(map);
-//                    satxGame.playSATX();
+                    Evaluation prpxGame = new Evaluation();
+                    prpxGame.getPRPXResults();
+
+
+//                    Game prpxGame = new Game(map);
+//                    prpxGame.playPRPX();
                     break;
                 default:
                     System.err.println("Invalid Strategy");

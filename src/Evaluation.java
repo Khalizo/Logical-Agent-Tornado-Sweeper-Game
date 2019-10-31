@@ -13,7 +13,7 @@ public class Evaluation {
     }
 
     /**
-     * Method for getting results from SPX across all maps
+     * Method for getting results after running SPX across all maps
      */
     public void getSPXResults() {
 
@@ -86,7 +86,7 @@ public class Evaluation {
     }
 
     /**
-     * Method for playing with the satisfiability strategy for hexagonal worlds (SATX)
+     * Method for getting results after running SATX across all maps
      */
     public void getSATXResults () {
 
@@ -163,4 +163,159 @@ public class Evaluation {
 
 
     }
+
+    /**
+     * Method for getting results after running PRPX across all maps
+     */
+    public void getPRPXResults () {
+
+        for (String map: maps ) {
+
+            //this is the map to play with
+            World world = World.valueOf(map);
+            double cellNumber = world.map.length * world.map.length;
+
+            //instantiate the SATX agent
+            PRPX agent = new PRPX(world.map);
+            long start = System.currentTimeMillis();
+
+
+
+            //two starting clues of probing in the top left hand corner and the centre
+            double mid = (world.map.length/2);
+            int m = (int)mid;
+            agent.probe(0, 0);
+            agent.probe(m, m);
+
+            //loop until all cells are marked or probed
+            while(!agent.unknown.isEmpty()) {
+                agent.prpxNoPrint();
+                if (!agent.isSafe) {
+                    break;
+                }
+            }
+
+            long end = System.currentTimeMillis();
+            double CR= (1 - agent.unknown.size()/cellNumber) *100;
+            int completionRate = (int)CR;
+
+            if (!agent.isSafe) { //Checks if the agent has probed a tornado or not
+                //Message for when the agent loses
+                String summary = "";
+                String delimiter = ",";
+                summary += map + delimiter
+                        + (end - start) + delimiter
+                        + agent.prpxCount + delimiter
+                        + completionRate + delimiter
+                        + "\n";
+                System.out.println(summary);
+            } else {
+                //Message for when the agent has won
+                String summary = "";
+                String delimiter = ",";
+                summary += map + delimiter
+                        + (end - start) + delimiter
+                        + agent.prpxCount + delimiter
+                        + completionRate + delimiter
+                        + "\n";
+                System.out.println(summary);
+
+            }
+
+        }
+
+
+
+
+
+    }
+
+    /**
+     * Method for playing with
+     */
+
+    /**
+     * Method for getting results after running ESX across all maps
+     */
+    public void getESXResults () {
+
+        for (String map: maps ) {
+
+            //this is the map to play with
+            World world = World.valueOf(map);
+            double cellNumber = world.map.length * world.map.length;
+
+            //instantiate the SATX agent
+            ESX agent = new ESX(world.map);
+            long start = System.currentTimeMillis();
+
+
+            //two starting clues of probing in the top left hand corner and the centre
+            double mid = (world.map.length/2);
+            int m = (int)mid;
+            agent.probe(0, 0);
+            agent.probe(m, m);
+
+            //loop until all cells are marked or probed
+            while(!agent.unknown.isEmpty()) {
+                /**
+                 * if SPX doesn't work resort to ESX
+                 * if ESX doesn't work resort to RPX
+                 **/
+                if (!agent.spxNoPrint() && !agent.esxNoPrint() ) {
+                    agent.rpxNoPrint();
+                }
+
+                if (!agent.isSafe) {
+                    break;
+                }
+            }
+
+            long end = System.currentTimeMillis();
+            double CR= (1 - agent.unknown.size()/cellNumber) *100;
+            int completionRate = (int)CR;
+
+            if (!agent.isSafe) { //Checks if the agent has probed a tornado or not
+                //Message for when the agent loses
+                String summary = "";
+                String delimiter = ",";
+                summary += map + delimiter
+                        + (end - start) + delimiter
+                        + agent.rpxCount + delimiter
+                        + agent.flagCount + delimiter
+                        + agent.spxCount + delimiter
+                        + agent.esxCount + delimiter
+                        + completionRate + delimiter
+                        + "\n";
+                System.out.println(summary);
+            } else {
+                //Message for when the agent has won
+                String summary = "";
+                String delimiter = ",";
+                summary += map + delimiter
+                        + (end - start) + delimiter
+                        + agent.rpxCount + delimiter
+                        + agent.flagCount + delimiter
+                        + agent.spxCount + delimiter
+                        + agent.esxCount + delimiter
+                        + completionRate + delimiter
+                        + "\n";
+                System.out.println(summary);
+
+            }
+
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
 }
