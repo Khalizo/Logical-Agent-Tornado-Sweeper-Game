@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7719a07-6758-4a89-bcf4-36acd95f1dd8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Performance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dimacs.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/dimacs.cnf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/A2main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/A2main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Agent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SATX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SATX.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/A2main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A2main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Performance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SATX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SATX.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/A2main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+            <state relative-caret-position="375">
+              <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,15 +36,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SATX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="82" column="25" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="25" />
+            <state relative-caret-position="422">
+              <caret line="223" column="33" selection-start-line="223" selection-start-column="33" selection-end-line="223" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#satx#0;class#SATX#0" />
                 <element signature="method#getKBU#0;class#SATX#0" />
                 <element signature="method#getThisKBU#0;class#SATX#0" />
+                <element signature="method#SATSatisfiable#0;class#SATX#0" />
+                <element signature="method#satx#1;class#SATX#0" />
               </folding>
             </state>
           </provider>
@@ -54,31 +56,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Agent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1137">
-              <caret line="126" column="23" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
+            <state relative-caret-position="152">
+              <caret line="422" column="7" lean-forward="true" selection-start-line="418" selection-start-column="2" selection-end-line="422" selection-end-column="7" />
               <folding>
                 <element signature="method#probe#0;class#Agent#0" />
                 <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
-                <element signature="method#rpx#0;class#Agent#0" />
+                <element signature="method#mark#0;class#Agent#0" />
                 <element signature="method#spx#0;class#Agent#0" />
                 <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
                 <element signature="method#getAdjacentMarked#0;class#Agent#0" />
-                <element signature="method#getAdjacentRisk#0;class#Agent#0" />
-                <element signature="method#getAdjacentSafe#0;class#Agent#0" />
-                <element signature="method#rpx#1;class#Agent#0" />
-                <element signature="method#spx#1;class#Agent#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Evaluation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="360">
+              <caret line="146" column="42" lean-forward="true" selection-start-line="146" selection-start-column="42" selection-end-line="146" selection-end-column="42" />
               <folding>
-                <element signature="e#433#434#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#playSPX#0;class#Performance#0" />
               </folding>
             </state>
           </provider>
@@ -87,20 +86,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="222" column="5" lean-forward="true" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="5" />
+            <state relative-caret-position="185">
+              <caret line="192" column="81" selection-start-line="192" selection-start-column="81" selection-end-line="192" selection-end-column="81" />
               <folding>
                 <element signature="method#playRPX#0;class#Game#0" />
                 <element signature="method#playSPX#0;class#Game#0" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dimacs.cnf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1440" />
           </provider>
         </entry>
       </file>
@@ -122,10 +114,12 @@
       <find>&amp;</find>
       <find>dpll</find>
       <find>`</find>
+      <find>markCount</find>
     </findStrings>
     <replaceStrings>
       <replace>k</replace>
       <replace>spx</replace>
+      <replace>flagCount</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -144,9 +138,10 @@
         <option value="$PROJECT_DIR$/src/SPX.java" />
         <option value="$PROJECT_DIR$/src/Performance.java" />
         <option value="$PROJECT_DIR$/src/Agent.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/A2main.java" />
+        <option value="$PROJECT_DIR$/src/Evaluation.java" />
         <option value="$PROJECT_DIR$/src/SATX.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
       </list>
     </option>
   </component>
@@ -226,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SATX M2">
+  <component name="RunManager" selected="Application.SATX TEST0">
     <configuration name="RPX L1" type="Application" factoryName="Application" folderName="RPX Large">
       <option name="MAIN_CLASS_NAME" value="A2main" />
       <module name="CS5011-A2-Logic-Tornado Sweeper" />
@@ -853,6 +848,36 @@
       <item itemvalue="Application.RPX Test0" />
       <item itemvalue="Application.RPX Test1" />
       <item itemvalue="Application.RPX Test2" />
+      <item itemvalue="Application.RPX L1" />
+      <item itemvalue="Application.RPX L2" />
+      <item itemvalue="Application.RPX L3" />
+      <item itemvalue="Application.RPX L4" />
+      <item itemvalue="Application.RPX L5" />
+      <item itemvalue="Application.RPX L6" />
+      <item itemvalue="Application.RPX L7" />
+      <item itemvalue="Application.RPX L8" />
+      <item itemvalue="Application.RPX L9" />
+      <item itemvalue="Application.RPX L10" />
+      <item itemvalue="Application.RPX M1" />
+      <item itemvalue="Application.RPX M2" />
+      <item itemvalue="Application.RPX M3" />
+      <item itemvalue="Application.RPX M4" />
+      <item itemvalue="Application.RPX M5" />
+      <item itemvalue="Application.RPX M6" />
+      <item itemvalue="Application.RPX M7" />
+      <item itemvalue="Application.RPX M8" />
+      <item itemvalue="Application.RPX M9" />
+      <item itemvalue="Application.RPX M10" />
+      <item itemvalue="Application.RPX S1" />
+      <item itemvalue="Application.RPX S2" />
+      <item itemvalue="Application.RPX S3" />
+      <item itemvalue="Application.RPX S4" />
+      <item itemvalue="Application.RPX S5" />
+      <item itemvalue="Application.RPX S6" />
+      <item itemvalue="Application.RPX S7" />
+      <item itemvalue="Application.RPX S8" />
+      <item itemvalue="Application.RPX S9" />
+      <item itemvalue="Application.RPX S10" />
       <item itemvalue="Application.SATX TEST0" />
       <item itemvalue="Application.SATX M2" />
       <item itemvalue="Application.SATX M7" />
@@ -889,36 +914,6 @@
       <item itemvalue="Application.SPX TEST0" />
       <item itemvalue="Application.SPX TEST2" />
       <item itemvalue="Application.SPX TEST1" />
-      <item itemvalue="Application.RPX S1" />
-      <item itemvalue="Application.RPX S2" />
-      <item itemvalue="Application.RPX S3" />
-      <item itemvalue="Application.RPX S4" />
-      <item itemvalue="Application.RPX S5" />
-      <item itemvalue="Application.RPX S6" />
-      <item itemvalue="Application.RPX S7" />
-      <item itemvalue="Application.RPX S8" />
-      <item itemvalue="Application.RPX S9" />
-      <item itemvalue="Application.RPX S10" />
-      <item itemvalue="Application.RPX L1" />
-      <item itemvalue="Application.RPX L2" />
-      <item itemvalue="Application.RPX L3" />
-      <item itemvalue="Application.RPX L4" />
-      <item itemvalue="Application.RPX L5" />
-      <item itemvalue="Application.RPX L6" />
-      <item itemvalue="Application.RPX L7" />
-      <item itemvalue="Application.RPX L8" />
-      <item itemvalue="Application.RPX L9" />
-      <item itemvalue="Application.RPX L10" />
-      <item itemvalue="Application.RPX M1" />
-      <item itemvalue="Application.RPX M2" />
-      <item itemvalue="Application.RPX M3" />
-      <item itemvalue="Application.RPX M4" />
-      <item itemvalue="Application.RPX M5" />
-      <item itemvalue="Application.RPX M6" />
-      <item itemvalue="Application.RPX M7" />
-      <item itemvalue="Application.RPX M8" />
-      <item itemvalue="Application.RPX M9" />
-      <item itemvalue="Application.RPX M10" />
       <item itemvalue="Multirun.RPX Medium" />
       <item itemvalue="Multirun.RPX Small" />
       <item itemvalue="Multirun.RPX Large" />
@@ -941,7 +936,7 @@
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49702382" visible="true" weight="0.30149412" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49702382" visible="true" weight="0.30469584" />
       <window_info id="Structure" order="1" sideWeight="0.5029762" side_tool="true" weight="0.291889" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1008,37 +1003,37 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SATX.java</url>
-          <line>52</line>
+          <line>46</line>
           <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SATX.java</url>
-          <line>53</line>
+          <line>47</line>
           <properties />
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SATX.java</url>
-          <line>194</line>
+          <line>189</line>
           <properties />
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SATX.java</url>
-          <line>188</line>
+          <line>183</line>
           <properties />
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SATX.java</url>
-          <line>187</line>
+          <line>182</line>
           <properties />
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SATX.java</url>
-          <line>186</line>
+          <line>181</line>
           <properties />
           <option name="timeStamp" value="87" />
         </line-breakpoint>
@@ -1052,7 +1047,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/SATX.java</url>
-          <line>182</line>
+          <line>177</line>
           <properties class="SATX" method="SATSatisfiable">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1140,16 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Performance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RPX.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1182,15 +1167,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/A2main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/dimacs.cnf">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1202,10 +1180,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/A2main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="422" column="7" lean-forward="true" selection-start-line="418" selection-start-column="2" selection-end-line="422" selection-end-column="7" />
+          <folding>
+            <element signature="method#probe#0;class#Agent#0" />
+            <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
+            <element signature="method#mark#0;class#Agent#0" />
+            <element signature="method#spx#0;class#Agent#0" />
+            <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
+            <element signature="method#getAdjacentMarked#0;class#Agent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SATX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="223" column="33" selection-start-line="223" selection-start-column="33" selection-end-line="223" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#satx#0;class#SATX#0" />
+            <element signature="method#getKBU#0;class#SATX#0" />
+            <element signature="method#getThisKBU#0;class#SATX#0" />
+            <element signature="method#SATSatisfiable#0;class#SATX#0" />
+            <element signature="method#satx#1;class#SATX#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="222" column="5" lean-forward="true" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="5" />
+        <state relative-caret-position="185">
+          <caret line="192" column="81" selection-start-line="192" selection-start-column="81" selection-end-line="192" selection-end-column="81" />
           <folding>
             <element signature="method#playRPX#0;class#Game#0" />
             <element signature="method#playSPX#0;class#Game#0" />
@@ -1213,38 +1231,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dimacs.cnf">
+    <entry file="file://$PROJECT_DIR$/src/Evaluation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1137">
-          <caret line="126" column="23" selection-start-line="126" selection-start-column="23" selection-end-line="126" selection-end-column="23" />
-          <folding>
-            <element signature="method#probe#0;class#Agent#0" />
-            <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
-            <element signature="method#rpx#0;class#Agent#0" />
-            <element signature="method#spx#0;class#Agent#0" />
-            <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
-            <element signature="method#getAdjacentMarked#0;class#Agent#0" />
-            <element signature="method#getAdjacentRisk#0;class#Agent#0" />
-            <element signature="method#getAdjacentSafe#0;class#Agent#0" />
-            <element signature="method#rpx#1;class#Agent#0" />
-            <element signature="method#spx#1;class#Agent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SATX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="82" column="25" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="25" />
+        <state relative-caret-position="360">
+          <caret line="146" column="42" lean-forward="true" selection-start-line="146" selection-start-column="42" selection-end-line="146" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getKBU#0;class#SATX#0" />
-            <element signature="method#getThisKBU#0;class#SATX#0" />
+            <element signature="method#playSPX#0;class#Performance#0" />
           </folding>
         </state>
       </provider>

@@ -9,7 +9,7 @@ import java.util.Random;
 public abstract class Agent {
     protected int rpxCount = 0; //Counts the number of random guesses
     protected int spxCount = 0; //Number of times spx was used
-    protected int markCount = 0; //Number of marked tornadoes
+    protected int flagCount = 0; //Number of marked tornadoes
     protected char [][] coveredMap; //Parts of the map that is covered
     protected char [][] answerMap; //Original map
     protected int maxX; //Max X coordinate of the map
@@ -133,7 +133,7 @@ public abstract class Agent {
         int y = loc[1];
         probe(x, y);
         rpxCount++;
-        System.out.println("RPX: probe[" + x + "," + y + "]");
+        System.out.println("RPX: Probe[" + x + "," + y + "]");
         Board agentBoard = new Board(this.getCoveredMap());
         agentBoard.printBoard();
         if (!this.isSafe) {
@@ -196,10 +196,10 @@ public abstract class Agent {
                     if (Character.getNumericValue( answerMap[j[1]][j[0]]) == getAdjacentRisk(j).size()) {
                         mark(x, y);
                         successful = true;
-                        System.out.println("SPX: Mark[" + x + "," + y + "]");
+                        System.out.println("SPX: Flag[" + x + "," + y + "]");
                         Board agentBoard = new Board(this.getCoveredMap());
                         agentBoard.printBoard();
-                        markCount++;
+                        flagCount++;
                         i--;
                         updateFrontUnknown();
                         break;
@@ -398,7 +398,8 @@ public abstract class Agent {
     }
 
     /**
-     * Special RPX function that doesn't print out information. Used running the algorithm in a format suitable for excel
+     * Implementation of the RPX strategy with out printing the board and "flag" or "probe". Used for running the 
+     * alogorithm and getting results in a format suitable for excel
      */
     public void rpxNoPrint () {
         ArrayList<int[]> front = this.unknown;
@@ -416,7 +417,8 @@ public abstract class Agent {
     }
 
     /**
-     * Implementation of the SPX strategy
+     * Implementation of the SPX strategy with out printing the board and "flag" or "probe". Used for running the 
+     * alogorithm and getting results in a format suitable for excel
      * @return
      */
     public boolean spxNoPrint () {
@@ -447,7 +449,7 @@ public abstract class Agent {
 //                        System.out.println("SPX: Mark[" + x + "," + y + "]");
                         Board agentBoard = new Board(this.getCoveredMap());
 //                        agentBoard.printBoard();
-                        markCount++;
+                        flagCount++;
                         i--;
                         updateFrontUnknown();
                         break;

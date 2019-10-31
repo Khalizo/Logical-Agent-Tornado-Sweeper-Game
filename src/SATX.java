@@ -1,10 +1,5 @@
-import net.sf.tweety.commons.Interpretation;
-import net.sf.tweety.logics.pl.parser.PlParser;
-import net.sf.tweety.logics.pl.sat.SatSolver;
-import net.sf.tweety.logics.pl.syntax.*;
 import org.logicng.formulas.Formula;
 import org.logicng.formulas.FormulaFactory;
-import org.logicng.formulas.Literal;
 import org.logicng.io.parsers.PropositionalParser;
 import org.logicng.io.writers.FormulaDimacsFileWriter;
 import org.sat4j.pb.SolverFactory;
@@ -14,7 +9,6 @@ import org.sat4j.specs.IProblem;
 import org.sat4j.specs.ISolver;
 
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.*;
 
 /**
@@ -59,7 +53,7 @@ public class SATX extends Agent {
             if (!ans) {
                 //if the answer is false, mark this cell.
                 mark(x, y);
-                System.out.println("SATX: Mark[" + x + "," + y + "]");
+                System.out.println("SATX: Flag[" + x + "," + y + "]");
                 Board agentBoard = new Board(this.getCoveredMap());
                 agentBoard.printBoard();
                 satxCount++;
@@ -176,7 +170,8 @@ public class SATX extends Agent {
     }
 
     /**
-     * this method is given in the lecture slide, invoking the SAT4J judgement method from the library.
+     * This method converts a propositional string to CNF and then to DIMACS format using LogicNG. The result is then fed
+     * to  the SAT4J SAT solver.
      * @param query
      * @return
      */
@@ -202,11 +197,10 @@ public class SATX extends Agent {
 
             //Check satisfiability
             if (problem.isSatisfiable()) {
-                System.out.println(query + " is satisfiable");
+//                System.out.println(query + " is satisfiable");
                 return true;
-
             } else {
-                System.out.println(query + " is NOT satisfiable");
+//                System.out.println(query + " is NOT satisfiable");
                 return false;
             }
 
@@ -224,6 +218,54 @@ public class SATX extends Agent {
 
         }
         return  false;
+    }
+
+    /**
+     * Implementation of the SATX strategy with out printing the board and "flag" or "probe". Used for running the
+     * alogorithm and getting results in a format suitable for excel
+     * @return
+     */
+    public boolean satxNoPrint() {
+        updateFrontKnown();
+        updateFrontUnknown();
+        boolean successful = false;
+        //generate the KBU with all known frontiers
+        String KBU = getKBU();
+        //for each unknown frontier, run the positive DPLLSat and negative DPLLSat
+        for (int i = 0; i < frontUnknown.size(); i++) {
+            int x = frontUnknown.get(i)[0];
+            int y = frontUnknown.get(i)[1];
+            //generate the logic sentence for this unknown frontier
+            String p = "D_" + x + "_" + + y;
+            //negative SAT
+            String KBUtrim = KBU.replace("& ()", "");
+            String prove = KBUtrim + " & ~" + p;
+            boolean ans = SATSatisfiable(prove);
+            if (!ans) {
+                //if the answer is false, flag this cell.
+                mark(x, y);
+////                System.out.println("SATX: Flag[" + x + "," + y + "]");
+//                Board agentBoard = new Board(this.getCoveredMap());
+//                agentBoard.printBoard();
+                satxCount++;
+                successful = true;
+            }
+            else {
+                //positive SAT
+                prove = KBUtrim + " & " + p;
+                ans = SATSatisfiable(prove);
+                if (!ans) {
+                    //if the answer is false, probe the cell
+                    probe(x, y);
+//                    System.out.println("SATX: Probe[" + x + "," + y + "]");
+//                    Board agentBoard = new Board(this.getCoveredMap());
+//                    agentBoard.printBoard();
+                    satxCount++;
+                    successful = true;
+                }
+            }
+        }
+        return successful;
     }
 
 

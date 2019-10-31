@@ -119,6 +119,7 @@ public class Game {
             System.out.println("***************Performance Report***************");
             System.out.println("Time(ms): " + (end - start));
             System.out.println("Number of random guesses: " + agent.rpxCount);
+            System.out.println("Number of flagged tornadoes: " + agent.flagCount);
             System.out.println("Number of times SPX was used: " + agent.spxCount);
             System.out.println("Completion Rate: " + completionRate + "%");
         } else {
@@ -128,7 +129,7 @@ public class Game {
             System.out.println("***************Performance Report***************");
             System.out.println("Time(ms): " + (end - start));
             System.out.println("Number of random guesses: " + agent.rpxCount);
-            System.out.println("Number of marked tornadoes: " + agent.markCount);
+            System.out.println("Number of flagged tornadoes: " + agent.flagCount);
             System.out.println("Number of times SPX was used: " + agent.spxCount);
             System.out.println("Completion Rate: " + completionRate + "%");
 
@@ -149,8 +150,7 @@ public class Game {
         SATX agent = new SATX(world.map);
         long start = System.currentTimeMillis();
         Board agentBoard= new Board(agent.getCoveredMap());
-        Board answerBoard = new Board(agent.answerMap);
-        answerBoard.printBoard();
+
 
         //two starting clues of probing in the top left hand corner and the centre
         double mid = (world.map.length/2);
@@ -190,6 +190,7 @@ public class Game {
             System.out.println("***************Performance Report***************");
             System.out.println("Time(ms): " + (end - start));
             System.out.println("Number of random guesses: " + agent.rpxCount);
+            System.out.println("Number of marked tornadoes: " + agent.flagCount);
             System.out.println("Number of times SPX was used: " + agent.spxCount);
             System.out.println("Number of times SATX was used: " + agent.satxCount);
             System.out.println("Completion Rate: " + completionRate + "%");
@@ -200,7 +201,7 @@ public class Game {
             System.out.println("***************Performance Report***************");
             System.out.println("Time(ms): " + (end - start));
             System.out.println("Number of random guesses: " + agent.rpxCount);
-            System.out.println("Number of marked tornadoes: " + agent.markCount);
+            System.out.println("Number of marked tornadoes: " + agent.flagCount);
             System.out.println("Number of times SPX was used: " + agent.spxCount);
             System.out.println("Number of times SATX was used: " + agent.satxCount);
             System.out.println("Completion Rate: " + completionRate + "%");

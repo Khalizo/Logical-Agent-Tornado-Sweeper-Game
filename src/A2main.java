@@ -27,8 +27,11 @@ public class A2main {
                     break;
                 case "SATX":
                     //play the game with the SATX strategy
-                    Game satxGame = new Game(map);
-                    satxGame.playSATX();
+
+                    Evaluation satx = new Evaluation();
+                    satx.getSATXResults();
+//                    Game satxGame = new Game(map);
+//                    satxGame.playSATX();
                     break;
                 default:
                     System.err.println("Invalid Strategy");
