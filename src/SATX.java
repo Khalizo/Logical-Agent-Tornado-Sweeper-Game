@@ -4,6 +4,7 @@ import net.sf.tweety.logics.pl.sat.SatSolver;
 import net.sf.tweety.logics.pl.syntax.*;
 import org.logicng.formulas.Formula;
 import org.logicng.formulas.FormulaFactory;
+import org.logicng.formulas.Literal;
 import org.logicng.io.parsers.PropositionalParser;
 import org.logicng.io.writers.FormulaDimacsFileWriter;
 import org.sat4j.pb.SolverFactory;
@@ -36,7 +37,7 @@ public class SATX extends Agent {
 
 
     /**
-     * The satisfiablility Strategy for hexagonal worlds strategy is implemented
+     * The satisfiablility Strategy for hexagonal worlds is implemented
      * @return true if one or more cells are successfully probed or marked
      */
     public boolean satx() {
@@ -50,9 +51,10 @@ public class SATX extends Agent {
             int x = frontUnknown.get(i)[0];
             int y = frontUnknown.get(i)[1];
             //generate the logic sentence for this unknown frontier
-            String p = "T_" + x + "_" + + y;
+            String p = "D_" + x + "_" + + y;
             //negative SAT
-            String prove = KBU + " & ~" + p;
+            String KBUtrim = KBU.replace("& ()", "");
+            String prove = KBUtrim + " & ~" + p;
             boolean ans = SATSatisfiable(prove);
             if (!ans) {
                 //if the answer is false, mark this cell.
@@ -65,7 +67,7 @@ public class SATX extends Agent {
             }
             else {
                 //positive SAT
-                prove = KBU + " & " + p;
+                prove = KBUtrim + " & " + p;
                 ans = SATSatisfiable(prove);
                 if (!ans) {
                     //if the answer is false, probe the cell
@@ -91,7 +93,7 @@ public class SATX extends Agent {
         //generate logic proposition for single known frontier and link them with &
         for (int i = 0; i < frontKnown.size(); i++) {
             int[] cell = frontKnown.get(i);
-            String sentence = getSingleKBU(cell);
+            String sentence = getThisKBU(cell);
             KBU += sentence;
             if (i < frontKnown.size() - 1) {
                 KBU += " & ";
@@ -107,12 +109,12 @@ public class SATX extends Agent {
      * @param cell
      * @return
      */
-    private String getSingleKBU(int[] cell) {
+    private String getThisKBU(int[] cell) {
         String single = "(";
         int x = cell[0];
         int y = cell[1];
         //count the unmarked nettles around this cell.
-        int count = answerMap[x][y] - getAdjacentMarked(cell).size();
+        int count = Character.getNumericValue(answerMap[y][x]) - getAdjacentMarked(cell).size();
         ArrayList<int[]> unknownNeighbors = getAdjacentUnknown(cell);
         //get a collection of list containing all possible combination of 0 and 1.
         //1 is tornado-positive
@@ -135,39 +137,39 @@ public class SATX extends Agent {
             possibleSet.add(set.clone());
         }
         //leave combinations with correct number of tornadoes only
-//        for (int i = 0; i < possibleSet.size(); i++) {
-//            int sum = 0;
-//            for (int j: possibleSet.get(i)) {
-//                if (j != 1) {
-//                    sum++;
-//                }
-//            }
-//            if (sum != count) {
-//                possibleSet.remove(i);
-//                i--;
-//            }
-//        }
-        //generate a proposition for this cell from the binary l ist
+        for (int i = 0; i < possibleSet.size(); i++) {
+            int sum = 0;
+            for (int j: possibleSet.get(i)) {
+                if (j == 1) {
+                    sum++;
+                }
+            }
+            if (sum != count) {
+                possibleSet.remove(i);
+                i--;
+            }
+        }
+        //generate a proposition for this cell from the binary list
         for (int j = 0; j < possibleSet.size(); j++) {
             int[] array = possibleSet.get(j);
-            String s = "(";
+            String builder = "(";
             for(int i = 0; i < array.length; i++) {
                 if (array[i] == 0) {
-                    s += "~"; //LogicNG syntax for NOT
+                    builder += "~"; //LogicNG syntax for NOT
                 }
-                s += "T_"; //T for tornado
-                s += unknownNeighbors.get(i)[0];
-                s += "_";
-                s += unknownNeighbors.get(i)[1];
+                builder += "D_"; //T for tornado
+                builder += unknownNeighbors.get(i)[0];
+                builder += "_";
+                builder+= unknownNeighbors.get(i)[1];
                 if (i != array.length - 1) {
-                    s += " & ";
+                    builder += " & ";
                 }
             }
-            s += ")";
+            builder += ")";
             if (j != possibleSet.size() - 1) {
-                s += " | ";
+                builder += " | ";
             }
-            single += s;
+            single += builder;
         }
         single += ")";
         return single;
@@ -217,19 +219,13 @@ public class SATX extends Agent {
         } catch (org.sat4j.specs.ContradictionException e) {
 
 
-        } catch (org.sat4j.specs.TimeoutException e){
+        }
+        catch (org.sat4j.specs.TimeoutException e){
 
         }
-        return  true;
+        return  false;
     }
 
-//    public ArrayList<int[]> getClauses (String kbu) {
-//        ArrayList<int[]> clauses = new ArrayList<>();
-//
-//
-//
-//
-//        return clauses;
-//    }
+
 
 }

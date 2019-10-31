@@ -1,13 +1,6 @@
-import net.sf.tweety.commons.Interpretation;
-import net.sf.tweety.logics.pl.parser.PlParser;
-import net.sf.tweety.logics.pl.sat.SatSolver;
-import net.sf.tweety.logics.pl.syntax.Conjunction;
-import net.sf.tweety.logics.pl.syntax.PlBeliefSet;
-import net.sf.tweety.logics.pl.syntax.PlFormula;
-import org.sat4j.specs.ISolver;
-
-import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Main method for playing the game with all strategies
@@ -16,7 +9,9 @@ import java.util.Collection;
 
 public class A2main {
     public static void main(String[] args) {
+
         try {
+
             String strategy = args[0];
             String map = args[1];
             switch (strategy) {
@@ -41,5 +36,7 @@ public class A2main {
             } catch (IndexOutOfBoundsException e) {
             System.err.println("Usage: java A2main <RPX|SPX|SATX> <MAP ID>");
             }
+
+
         }
 }

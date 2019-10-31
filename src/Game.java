@@ -49,11 +49,23 @@ public class Game {
         if (!agent.isSafe) {
             System.out.println();
             System.out.println("***************Performance Report***************");
+            System.out.println("Map: " + this.map);
             System.out.println("Time(ms): " + (end - start));
             System.out.println("Number of random guesses: " + agent.rpxCount);
             double CR= (1 - agent.unknown.size()/cellNumber) *100;
             int completionRate = (int)CR;
             System.out.println("Completion Rate: " + completionRate + "%");
+
+            String summary = "";
+            String delimiter = ",";
+            summary += this.map + delimiter
+                    + (end - start) + delimiter
+                    + agent.rpxCount + delimiter
+                    + completionRate + delimiter
+                    + "\n";
+            System.out.println(summary);
+
+
         }
     }
 
@@ -198,6 +210,19 @@ public class Game {
 
 
     }
+
+
+    public void SATXTest () {
+        //this is the map to play with
+        World world = World.valueOf(this.map);
+        double cellNumber = world.map.length * world.map.length;
+
+        //instantiate the RPX agent
+        SATX agent = new SATX(world.map);
+        agent.SATSatisfiable("((D_2_1 & ~D_2_0) | (~D_2_1 & D_2_0)) & ((D_2_2 & ~D_2_1) | (~D_2_2 & D_2_1)) & ((D_2_2 & D_3_2 & ~D_3_1 & ~D_2_0) | (D_2_2 & ~D_3_2 & D_3_1 & ~D_2_0) | (~D_2_2 & D_3_2 & D_3_1 & ~D_2_0) | (D_2_2 & ~D_3_2 & ~D_3_1 & D_2_0) | (~D_2_2 & D_3_2 & ~D_3_1 & D_2_0) | (~D_2_2 & ~D_3_2 & D_3_1 & D_2_0)) & ((D_2_0 & ~D_3_1 & ~D_4_1 & ~D_4_0) | (~D_2_0 & D_3_1 & ~D_4_1 & ~D_4_0) | (~D_2_0 & ~D_3_1 & D_4_1 & ~D_4_0) | (~D_2_0 & ~D_3_1 & ~D_4_1 & D_4_0)) & ((D_2_0 & D_2_1 & ~D_3_2 & ~D_4_2 & ~D_4_1 & ~D_3_0) | (D_2_0 & ~D_2_1 & D_3_2 & ~D_4_2 & ~D_4_1 & ~D_3_0) | (~D_2_0 & D_2_1 & D_3_2 & ~D_4_2 & ~D_4_1 & ~D_3_0) | (D_2_0 & ~D_2_1 & ~D_3_2 & D_4_2 & ~D_4_1 & ~D_3_0) | (~D_2_0 & D_2_1 & ~D_3_2 & D_4_2 & ~D_4_1 & ~D_3_0) | (~D_2_0 & ~D_2_1 & D_3_2 & D_4_2 & ~D_4_1 & ~D_3_0) | (D_2_0 & ~D_2_1 & ~D_3_2 & ~D_4_2 & D_4_1 & ~D_3_0) | (~D_2_0 & D_2_1 & ~D_3_2 & ~D_4_2 & D_4_1 & ~D_3_0) | (~D_2_0 & ~D_2_1 & D_3_2 & ~D_4_2 & D_4_1 & ~D_3_0) | (~D_2_0 & ~D_2_1 & ~D_3_2 & D_4_2 & D_4_1 & ~D_3_0) | (D_2_0 & ~D_2_1 & ~D_3_2 & ~D_4_2 & ~D_4_1 & D_3_0) | (~D_2_0 & D_2_1 & ~D_3_2 & ~D_4_2 & ~D_4_1 & D_3_0) | (~D_2_0 & ~D_2_1 & D_3_2 & ~D_4_2 & ~D_4_1 & D_3_0) | (~D_2_0 & ~D_2_1 & ~D_3_2 & D_4_2 & ~D_4_1 & D_3_0) | (~D_2_0 & ~D_2_1 & ~D_3_2 & ~D_4_2 & D_4_1 & D_3_0)) & ((D_2_2 & ~D_2_3 & ~D_3_4 & ~D_4_4 & ~D_4_3 & ~D_3_2) | (~D_2_2 & D_2_3 & ~D_3_4 & ~D_4_4 & ~D_4_3 & ~D_3_2) | (~D_2_2 & ~D_2_3 & D_3_4 & ~D_4_4 & ~D_4_3 & ~D_3_2) | (~D_2_2 & ~D_2_3 & ~D_3_4 & D_4_4 & ~D_4_3 & ~D_3_2) | (~D_2_2 & ~D_2_3 & ~D_3_4 & ~D_4_4 & D_4_3 & ~D_3_2) | (~D_2_2 & ~D_2_3 & ~D_3_4 & ~D_4_4 & ~D_4_3 & D_3_2)) & ((~D_3_0 & ~D_4_1 & ~D_5_1 & ~D_5_0)) & ((D_3_0 & D_3_1 & ~D_4_2 & ~D_5_2 & ~D_5_1 & ~D_4_0) | (D_3_0 & ~D_3_1 & D_4_2 & ~D_5_2 & ~D_5_1 & ~D_4_0) | (~D_3_0 & D_3_1 & D_4_2 & ~D_5_2 & ~D_5_1 & ~D_4_0) | (D_3_0 & ~D_3_1 & ~D_4_2 & D_5_2 & ~D_5_1 & ~D_4_0) | (~D_3_0 & D_3_1 & ~D_4_2 & D_5_2 & ~D_5_1 & ~D_4_0) | (~D_3_0 & ~D_3_1 & D_4_2 & D_5_2 & ~D_5_1 & ~D_4_0) | (D_3_0 & ~D_3_1 & ~D_4_2 & ~D_5_2 & D_5_1 & ~D_4_0) | (~D_3_0 & D_3_1 & ~D_4_2 & ~D_5_2 & D_5_1 & ~D_4_0) | (~D_3_0 & ~D_3_1 & D_4_2 & ~D_5_2 & D_5_1 & ~D_4_0) | (~D_3_0 & ~D_3_1 & ~D_4_2 & D_5_2 & D_5_1 & ~D_4_0) | (D_3_0 & ~D_3_1 & ~D_4_2 & ~D_5_2 & ~D_5_1 & D_4_0) | (~D_3_0 & D_3_1 & ~D_4_2 & ~D_5_2 & ~D_5_1 & D_4_0) | (~D_3_0 & ~D_3_1 & D_4_2 & ~D_5_2 & ~D_5_1 & D_4_0) | (~D_3_0 & ~D_3_1 & ~D_4_2 & D_5_2 & ~D_5_1 & D_4_0) | (~D_3_0 & ~D_3_1 & ~D_4_2 & ~D_5_2 & D_5_1 & D_4_0)) & ~D_2_5");
+    }
+
+
 
 
 
