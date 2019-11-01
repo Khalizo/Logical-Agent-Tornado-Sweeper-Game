@@ -93,7 +93,7 @@ public class ESX extends Agent {
                 }
             }
             if (!contained) {
-                System.out.println("ESX: probe[" + i[0] + "," + i[1] + "]");
+                System.out.println("ESX: Probe[" + i[0] + "," + i[1] + "]");
                 esxCount++;
                 probe(i[0], i[1]);
             }
@@ -114,7 +114,7 @@ public class ESX extends Agent {
                 }
             }
             if (!contained) {
-                System.out.println("ESX: mark[" + i[0] + "," + i[1] + "]");
+                System.out.println("ESX: Flag[" + i[0] + "," + i[1] + "]");
                 esxCount++;
                 mark(i[0], i[1]);
             }

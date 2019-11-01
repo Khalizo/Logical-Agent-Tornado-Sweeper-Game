@@ -3,25 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b7719a07-6758-4a89-bcf4-36acd95f1dd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS5011-A2-Logic-Tornado Sweeper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CS5011-A2-Logic-Tornado Sweeper.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/A2main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/A2main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Evaluation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Evaluation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/PRPX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/PRPX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SATX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS5011-A2-Logic-Tornado Sweeper/SATX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A2main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ESX.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Evaluation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PRPX.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RPX.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SATX.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SPX.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/World.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/A2src/ESX.java" beforeDir="false" afterPath="$PROJECT_DIR$/A2src/ESX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dimacs.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/dimacs.cnf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,18 +18,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compile.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="13" />
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/A2src/Agent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1230">
+              <caret line="170" column="7" lean-forward="true" selection-start-line="170" selection-start-column="7" selection-end-line="170" selection-end-column="77" />
+              <folding>
+                <element signature="method#Agent#0;class#Agent#0" />
+                <element signature="method#probe#0;class#Agent#0" />
+                <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
+                <element signature="method#rpx#0;class#Agent#0" />
+                <element signature="method#spx#0;class#Agent#0" />
+                <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/A2src/Game.java">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="291" column="107" lean-forward="true" selection-start-line="291" selection-start-column="7" selection-end-line="291" selection-end-column="107" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/A2src/SATX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="172" column="121" lean-forward="true" selection-start-line="172" selection-start-column="7" selection-end-line="172" selection-end-column="121" />
+              <folding>
+                <element signature="method#satxNoPrint#0;class#SATX#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/A2src/ESX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6">
+              <caret line="95" column="42" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/A2src/PRPX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="20" column="68" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="68" />
+              <folding>
+                <element signature="method#prpx#0;class#PRPX#0" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -99,7 +136,9 @@
         <option value="$PROJECT_DIR$/src/PRPX.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/compile.sh" />
+        <option value="$PROJECT_DIR$/A2src/Agent.java" />
         <option value="$PROJECT_DIR$/A2src/Game.java" />
+        <option value="$PROJECT_DIR$/A2src/ESX.java" />
       </list>
     </option>
   </component>
@@ -134,7 +173,12 @@
             <path>
               <item name="CS5011-A2-Logic-Tornado Sweeper" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS5011-A2-Logic-Tornado Sweeper" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="A2src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS5011-A2-Logic-Tornado Sweeper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS5011-A2-Logic-Tornado Sweeper" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CS5011-A2-Logic-Tornado Sweeper" type="b2602c69:ProjectViewProjectNode" />
@@ -174,7 +218,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ESX TEST0 ">
+  <component name="RunManager" selected="Application.PRPX TEST0">
+    <configuration name="ESX L4" type="Application" factoryName="Application" folderName="ESX">
+      <option name="MAIN_CLASS_NAME" value="A2main" />
+      <module name="CS5011-A2-Logic-Tornado Sweeper" />
+      <option name="PROGRAM_PARAMETERS" value="ESX L4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ESX M2" type="Application" factoryName="Application" folderName="ESX">
       <option name="MAIN_CLASS_NAME" value="A2main" />
       <module name="CS5011-A2-Logic-Tornado Sweeper" />
@@ -823,6 +875,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.ESX TEST0 " />
+      <item itemvalue="Application.ESX L4" />
       <item itemvalue="Application.ESX M2" />
       <item itemvalue="Application.PRPX TEST0" />
       <item itemvalue="Application.RPX Test0" />
@@ -914,8 +967,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49702382" visible="true" weight="0.32337245" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49702382" visible="true" weight="0.32337245" />
       <window_info id="Structure" order="1" sideWeight="0.5029762" side_tool="true" weight="0.291889" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -925,7 +979,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295583" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49839914" visible="true" weight="0.3202545" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49839914" visible="true" weight="0.90774125" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49839914" weight="0.2873807" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1251,40 +1305,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A2src/SATX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="223" column="86" selection-start-line="223" selection-start-column="86" selection-end-line="223" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#satx#0;class#SATX#0" />
-            <element signature="method#getKBU#0;class#SATX#0" />
-            <element signature="method#getThisKBU#0;class#SATX#0" />
-            <element signature="method#SATSatisfiable#0;class#SATX#0" />
-            <element signature="method#satxNoPrint#0;class#SATX#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/A2src/Agent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="170" column="77" selection-start-line="170" selection-start-column="77" selection-end-line="170" selection-end-column="77" />
-          <folding>
-            <element signature="method#Agent#0;class#Agent#0" />
-            <element signature="method#probe#0;class#Agent#0" />
-            <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
-            <element signature="method#spx#0;class#Agent#0" />
-            <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
-            <element signature="method#getAdjacentMarked#0;class#Agent#0" />
-            <element signature="method#getAdjacentRisk#0;class#Agent#0" />
-            <element signature="method#getAdjacentSafe#0;class#Agent#0" />
-            <element signature="method#rpxNoPrint#0;class#Agent#0" />
-            <element signature="method#spxNoPrint#0;class#Agent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/A2src/World.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1324,18 +1344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A2src/PRPX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#prpx#0;class#PRPX#0" />
-            <element signature="method#prpxNoPrint#0;class#PRPX#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/A2src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1346,25 +1354,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A2src/ESX.java">
+    <entry file="file://$PROJECT_DIR$/compile.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="10" selection-start-line="2" selection-end-line="6" selection-end-column="3" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A2src/Agent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="170" column="7" lean-forward="true" selection-start-line="170" selection-start-column="7" selection-end-line="170" selection-end-column="77" />
           <folding>
-            <element signature="method#isContained#0;class#ESX#0" />
-            <element signature="method#probeEsx#0;class#ESX#0" />
-            <element signature="method#flagEsx#0;class#ESX#0" />
+            <element signature="method#Agent#0;class#Agent#0" />
+            <element signature="method#probe#0;class#Agent#0" />
+            <element signature="method#uncoverZeroNeighbours#0;class#Agent#0" />
+            <element signature="method#rpx#0;class#Agent#0" />
+            <element signature="method#spx#0;class#Agent#0" />
+            <element signature="method#getAdjacentUnknown#0;class#Agent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A2src/SATX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="172" column="121" lean-forward="true" selection-start-line="172" selection-start-column="7" selection-end-line="172" selection-end-column="121" />
+          <folding>
+            <element signature="method#satxNoPrint#0;class#SATX#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/A2src/Game.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compile.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="90">
+          <caret line="291" column="107" lean-forward="true" selection-start-line="291" selection-start-column="7" selection-end-line="291" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A2src/ESX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="95" column="42" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A2src/PRPX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="68" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="68" />
+          <folding>
+            <element signature="method#prpx#0;class#PRPX#0" />
+          </folding>
         </state>
       </provider>
     </entry>
