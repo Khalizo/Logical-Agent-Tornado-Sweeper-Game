@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Random;
-
+/**
+ * The agent class for implementing the PRPX strategy
+ * @author 180026646
+ *
+ */
 public class PRPX extends Agent {
 
     protected int prpxCount = 0;
@@ -13,7 +17,8 @@ public class PRPX extends Agent {
 
 
     /**
-     * make a random guess from the possibly safe unknown frontiers
+     * Probability random probing strategy for hexagonal worlds (PRPX)
+     * make a random guess from the possibly safe unknown frontiers.
      */
     public void prpx() {
         updateFrontUnknown();

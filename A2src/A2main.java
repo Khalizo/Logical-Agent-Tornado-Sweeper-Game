@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 /**
  * Main method for playing the game with all strategies
@@ -32,20 +30,13 @@ public class A2main {
                     break;
                 case "ESX":
                     //play the game with the ESX strategy
-                    Evaluation esxGame = new Evaluation();
-                    esxGame.getESXResults();
-//                    Game esxGame = new Game(map);
-//                    esxGame.playESX();
+                    Game esxGame = new Game(map);
+                    esxGame.playESX();
                     break;
                 case "PRPX":
                     //play the game with the PRPX strategy
-
-                    Evaluation prpxGame = new Evaluation();
-                    prpxGame.getPRPXResults();
-
-
-//                    Game prpxGame = new Game(map);
-//                    prpxGame.playPRPX();
+                    Game prpxGame = new Game(map);
+                    prpxGame.playPRPX();
                     break;
                 default:
                     System.err.println("Invalid Strategy");

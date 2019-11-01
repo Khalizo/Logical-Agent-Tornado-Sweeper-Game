@@ -1,6 +1,11 @@
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The evaluation class used for efficiently getting data across algorithms by looping through all the maps
+ * @author 180026646
+ *
+ */
 public class Evaluation {
 
     public List<String> maps = Arrays.
@@ -230,9 +235,6 @@ public class Evaluation {
 
     }
 
-    /**
-     * Method for playing with
-     */
 
     /**
      * Method for getting results after running ESX across all maps

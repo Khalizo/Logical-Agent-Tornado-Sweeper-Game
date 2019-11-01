@@ -17,7 +17,7 @@ public class ESX extends Agent {
     }
 
     /**
-     * Implementation of the equation strategy
+     * Implementation of the equation strategy for hexagonal worlds (ESX)
      * @return true if one or more cells are successfully probed or marked
      */
     public boolean esx() {
@@ -101,7 +101,7 @@ public class ESX extends Agent {
     }
 
     /**
-     * mark cells that could potentially have a danger
+     * flag cells that could potentially have a danger
      * @param n1	bigger
      * @param n2	smaller
      */

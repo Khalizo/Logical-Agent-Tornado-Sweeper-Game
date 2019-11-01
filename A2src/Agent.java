@@ -168,7 +168,7 @@ public abstract class Agent {
     }
 
     /**
-     * Implementation of the SPX strategy
+     * Implementation of the single-point strategy for hexagonal worlds (SPX)
      * @return
      */
     public boolean spx () {
@@ -398,8 +398,7 @@ public abstract class Agent {
     }
 
     /**
-     * Implementation of the RPX strategy with out printing the board and "flag" or "probe". Used for running the 
-     * alogorithm and getting results in a format suitable for excel
+     * Implementation of the RPX strategy without printing to the console. Used for getting results in a format suitable for excel
      */
     public void rpxNoPrint () {
         ArrayList<int[]> front = this.unknown;
@@ -417,8 +416,7 @@ public abstract class Agent {
     }
 
     /**
-     * Implementation of the SPX strategy with out printing the board and "flag" or "probe". Used for running the 
-     * alogorithm and getting results in a format suitable for excel
+     * Implementation of the SPX strategy with out printing the board and "flag" or "probe". Used for getting results in a format suitable for excel
      * @return
      */
     public boolean spxNoPrint () {

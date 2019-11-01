@@ -31,7 +31,7 @@ public class SATX extends Agent {
 
 
     /**
-     * The satisfiablility Strategy for hexagonal worlds is implemented
+     * The satisfiablility Strategy for hexagonal worlds (SATX) is implemented
      * @return true if one or more cells are successfully probed or marked
      */
     public boolean satx() {
@@ -221,8 +221,7 @@ public class SATX extends Agent {
     }
 
     /**
-     * Implementation of the SATX strategy with out printing the board and "flag" or "probe". Used for running the
-     * alogorithm and getting results in a format suitable for excel
+     * Implementation of the SATX strategy with out printing to the console. Used for getting results in a format suitable for excel
      * @return
      */
     public boolean satxNoPrint() {
